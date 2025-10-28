@@ -1,0 +1,44 @@
+# 수정중! 아직 예시파일임 
+name: Weekly WiFi Update
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'     # 매주 월요일 오전 9시 UTC 실행 (필요시 조정)
+  workflow_dispatch:        # 수동 트리거 허용
+
+jobs:
+  update-wifi:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_HOST: ${{ secrets.DB_HOST }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      DB_NAME: ${{ secrets.DB_NAME }}
+      DB_USER: ${{ secrets.DB_USER }}
+      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run ETL script (fetch & load)
+        run: |
+          python scripts/fetch_and_load.py
