@@ -90,3 +90,67 @@ pip install -r requirements.txt
 python scripts/fetch_wifi_data.py
 python scripts/upload_to_postgres.py
 ```
+
+## ☁️ Deployment via GitHub Actions
+
+The update_data.yml workflow automates the weekly job.
+'''
+name: Update Wi-Fi Certified Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'   # Every Sunday at 00:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Data Update
+        run: python scripts/fetch_wifi_data.py && python scripts/upload_to_postgres.py
+
+
+## 📈 Tableau Dashboard
+
+A Tableau Public dashboard connects directly to your PostgreSQL (Neon) database or a CSV snapshot.
+This ensures the dashboard always displays the latest Wi-Fi certification trends.
+
+(Example link — replace with Tableau dashboard)
+👉 View Dashboard on Tableau Public
+
+## 💾 Historical Archiving
+
+Older data (past months) can be exported and stored in:
+
+```
+data/ folder within this repo
+
+or Google Drive / GitHub Releases
+```
+
+## 🧠 Future Improvements
+
+Automate monthly archiving to GitHub or S3
+
+Add visualization for certification frequency trends
+
+Integrate Slack/Email notifications for pipeline success/failure
+
+## 📜 License
+
+This project is licensed under the MIT License — feel free to use and adapt it.
+
+## 👩‍💻 Author
+
+Yuna Kim
