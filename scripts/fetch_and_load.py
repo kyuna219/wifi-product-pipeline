@@ -22,7 +22,7 @@ def get_db_connection():
         dbname=os.environ.get("POSTGRES_DB"),
         user=os.environ.get("POSTGRES_USER"),
         password=os.environ.get("POSTGRES_PASSWORD"),
-        sslmode=os.environ.get("POSTGRES_SSLMODE", "require")  # 🔸 GitHub Actions에서도 대응
+        sslmode=os.environ.get("POSTGRES_SSLMODE", "require") 
     )
     return conn
 
