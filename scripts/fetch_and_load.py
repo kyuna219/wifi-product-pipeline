@@ -14,12 +14,17 @@ from datetime import date, timedelta
 import psycopg2
 from psycopg2.extras import execute_values
 
-# Postgres connection from env
-DB_HOST = os.environ.get("DB_HOST")
-DB_PORT = int(os.environ.get("DB_PORT", "5432"))
-DB_NAME = os.environ.get("DB_NAME")
-DB_USER = os.environ.get("DB_USER")
-DB_PASSWORD = os.environ.get("DB_PASSWORD")
+def get_db_connection():
+    """Create and return a PostgreSQL connection using environment variables."""
+    conn = psycopg2.connect(
+        host=os.environ.get("POSTGRES_HOST"),
+        port=int(os.environ.get("POSTGRES_PORT", "5432")),
+        dbname=os.environ.get("POSTGRES_DB"),
+        user=os.environ.get("POSTGRES_USER"),
+        password=os.environ.get("POSTGRES_PASSWORD"),
+        sslmode=os.environ.get("POSTGRES_SSLMODE", "disable")  # 🔸 GitHub Actions에서도 대응
+    )
+    return conn
 
 CERTS = ["276","235","189","1652"]
 
@@ -70,13 +75,7 @@ def main():
     all_df = all_df.drop_duplicates(subset=["cid"], keep="first")
 
     # DB 저장
-    conn = psycopg2.connect(
-        host=os.environ["DB_HOST"],
-        port=os.environ["DB_PORT"],
-        dbname=os.environ["DB_NAME"],
-        user=os.environ["DB_USER"],
-        password=os.environ["DB_PASSWORD"]
-    )
+    conn = get_db_connection()
     cur = conn.cursor()
     cur.execute("""
     CREATE TABLE IF NOT EXISTS wifi_products (
