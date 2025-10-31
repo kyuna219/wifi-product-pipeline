@@ -1,0 +1,8 @@
+# --- HTTP Requests ---
+requests>=2.31.0
+
+# --- Data Handling ---
+pandas>=2.2.0
+
+# --- PostgreSQL Driver ---
+psycopg2-binary>=2.9.9
