@@ -53,7 +53,7 @@ def request_wifi(certifications, date_from):
         rows.append(d)
     return pd.DataFrame(rows)
 
-def main():
+def update_weekly_data():
     today = date.today()
     week_ago = today - timedelta(days=7)
     date_from = str(week_ago)
@@ -124,6 +124,35 @@ def main():
     cur.close()
     conn.close()
     print("Upsert complete, rows:", len(rows))
+
+def backup_monthly_csv():
+    conn = get_db_connection()
+    df = pd.read_sql("SELECT * FROM wifi_products ORDER BY date_certified DESC;", conn)
+    conn.close()
+
+    if df.empty:
+        print("⚠️ No data to back up.")
+        return
+
+    # 📁 폴더 경로 생성: data/YYYY/
+    year = date.today().year
+    month = date.today().strftime("%m")
+    folder_path = Path(f"data/{year}")
+    folder_path.mkdir(parents=True, exist_ok=True)
+
+    # 💾 파일 경로 예시: data/2025/2025-10.csv
+    file_path = folder_path / f"{year}-{month}.csv"
+    df.to_csv(file_path, index=False)
+    print(f"📁 Monthly backup saved: {file_path}")
+
+def main():
+    update_weekly_data()
+
+    # 🔸 매달 1일이면 백업 실행
+    today = date.today()
+    if today.day == 1:
+        print("🗓 Running monthly backup...")
+        backup_monthly_csv()
 
 if __name__ == "__main__":
     main()
