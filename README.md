@@ -47,8 +47,7 @@ wifi_certified_data_pipeline/
 │ └── update_data.yml # GitHub Actions workflow
 │
 ├── scripts/
-│ ├── fetch_wifi_data.py # Fetch and clean Wi-Fi data
-│ └── upload_to_postgres.py # Insert data into PostgreSQL
+│ ├── fetch_and_load.py # Fetch and load Wi-Fi data
 │
 ├── data/
 │ └── (optional) archived_data.csv
@@ -94,7 +93,7 @@ python scripts/upload_to_postgres.py
 ## ☁️ Deployment via GitHub Actions
 
 The update_data.yml workflow automates the weekly job.
-'''
+```
 name: Update Wi-Fi Certified Data
 
 on:
@@ -119,7 +118,7 @@ jobs:
 
       - name: Run Data Update
         run: python scripts/fetch_wifi_data.py && python scripts/upload_to_postgres.py
-
+```
 
 ## 📈 Tableau Dashboard
 
