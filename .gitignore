@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# 데이터 관련
+data/*              # data 폴더 내부는 기본 무시
+!data/**/*.csv      # 단, .csv 파일은 업로드 허용
+!data/.gitkeep      # .gitkeep은 폴더 유지용으로 업로드 허용
