@@ -147,11 +147,15 @@ def backup_monthly_csv():
     print(f"📁 Monthly backup saved: {file_path}")
 
     # DELETE로 백업된 데이터 지우고 DB 정리
+    conn = get_db_connection()
+    cur = conn.cursor()
     cur.execute("""
         DELETE FROM wifi_products
         WHERE TO_CHAR(date_certified, 'YYYY-MM') = %s
     """, (target_month,))
     conn.commit()
+    cur.close()
+    conn.close()
     print(f"🧹 Deleted data for {target_month} from DB")
 
 def main():
