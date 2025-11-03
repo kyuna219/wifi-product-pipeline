@@ -13,6 +13,7 @@ import pandas as pd
 from datetime import date, timedelta
 import psycopg2
 from psycopg2.extras import execute_values
+from pathlib import Path
 
 def get_db_connection():
     """Create and return a PostgreSQL connection using environment variables."""
