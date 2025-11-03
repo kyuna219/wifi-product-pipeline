@@ -156,9 +156,11 @@ def backup_monthly_csv():
 def main():
     update_weekly_data()
 
+    test_date = True
+
     # 🔸 매달 1일이면 백업 실행
     today = date.today()
-    if today.day == 1:
+    if today.day == 1 or test_date:
         print("🗓 Running monthly backup...")
         backup_monthly_csv()
 
