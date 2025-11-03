@@ -128,36 +128,50 @@ def update_weekly_data():
 
 def backup_monthly_csv():
     conn = get_db_connection()
-    df = pd.read_sql("SELECT * FROM wifi_products ORDER BY date_certified DESC;", conn)
-    conn.close()
+    cur = conn.cursor()
+
+    # 🔹 이번 달(1일 기준으로 이전 달)을 백업 대상으로 계산
+    today = date.today()
+    target_month = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+    print(f"🗓 Backing up data for: {target_month}")
+
+    # 🔹 백업 대상 데이터 가져오기
+    query = """
+        SELECT * FROM wifi_products
+        WHERE TO_CHAR(date_certified, 'YYYY-MM') = %s
+        ORDER BY date_certified DESC;
+    """
+    df = pd.read_sql(query, conn, params=(target_month,))
 
     if df.empty:
-        print("⚠️ No data to back up.")
+        print("⚠️ No data found for that month.")
+        cur.close()
+        conn.close()
         return
 
-    # 📁 폴더 경로 생성: data/YYYY/
-    year = date.today().year
-    month = date.today().strftime("%m")
+    # 📁 폴더 생성: data/YYYY/
+    year = target_month.split("-")[0]
     folder_path = Path(f"data/{year}")
     folder_path.mkdir(parents=True, exist_ok=True)
 
-    # 💾 파일 경로 예시: data/2025/2025-10.csv
-    file_path = folder_path / f"{year}-{month}.csv"
+    # 💾 CSV 파일 저장: data/2025/2025-10.csv
+    file_path = folder_path / f"{target_month}.csv"
     df.to_csv(file_path, index=False)
     print(f"📁 Monthly backup saved: {file_path}")
 
-    # DELETE로 백업된 데이터 지우고 DB 정리
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute("""
+    # 🔹 DB에서 해당 월 데이터 삭제
+    delete_sql = """
         DELETE FROM wifi_products
-        WHERE TO_CHAR(date_certified, 'YYYY-MM') = %s
-    """, (target_month,))
+        WHERE TO_CHAR(date_certified, 'YYYY-MM') = %s;
+    """
+    cur.execute(delete_sql, (target_month,))
     conn.commit()
+    print(f"🧹 Deleted {target_month} data from DB")
+
     cur.close()
     conn.close()
-    print(f"🧹 Deleted data for {target_month} from DB")
-
+    print("✅ Monthly backup complete")
+    
 def main():
     update_weekly_data()
 
