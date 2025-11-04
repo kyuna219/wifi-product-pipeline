@@ -6,3 +6,6 @@ pandas>=2.2.0
 
 # --- PostgreSQL Driver ---
 psycopg2-binary>=2.9.9
+
+# --- Export Excel ---
+openpyxl
