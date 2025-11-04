@@ -14,6 +14,7 @@ from datetime import date, timedelta
 import psycopg2
 from psycopg2.extras import execute_values
 from pathlib import Path
+import sys
 
 def get_db_connection():
     """Create and return a PostgreSQL connection using environment variables."""
@@ -173,15 +174,21 @@ def backup_monthly_csv():
     print("✅ Monthly backup complete")
     
 def main():
-    update_weekly_data()
-
-    test_date = True
-
-    # 🔸 매달 1일이면 백업 실행
-    today = date.today()
-    if today.day == 1 or test_date:
-        print("🗓 Running monthly backup...")
+    if len(sys.argv) < 2:
+        print("Error: Missing run mode argument. Use 'weekly' or 'monthly'.")
+        sys.exit(1)
+        
+    mode = sys.argv[1]
+    
+    if mode == 'weekly':
+        print("🚀 Starting weekly data update...")
+        update_weekly_data()
+    elif mode == 'monthly':
+        print("💾 Starting monthly backup...")
         backup_monthly_csv()
+    else:
+        print(f"Error: Invalid run mode: {mode}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
