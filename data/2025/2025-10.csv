@@ -1,0 +1,15 @@
+cid,brand,product,model_number,date_certified,category,frequency_band,wifi_n,wifi_ac,wifi_6,wifi_7
+WFA137905,ZTE Corporation,LTE/WCDMA/GSM(GPRS) Multi-Mode Digital Mobile Phone,Z2577,2025-10-31,Phones,2.4 GHz; 5 GHz,True,True,False,False
+WFA137841,"Sichuan Changhong NeoNet Technologies Co., Ltd",Wi-Fi Router,BWR-800E,2025-10-31,Routers,2.4 GHz; 5 GHz,True,True,True,False
+WFA135136,BYD Auto Industry Company Limited,In-vehicle Multimedia Host,MTCV03,2025-10-30,Other,2.4 GHz; 5 GHz,True,True,True,False
+WFA137959,"Harman International Industries, Inc.",TATA Gen3 plus,COCKPIT CONTROLLER IVI IC HIGH7,2025-10-30,Other,2.4 GHz; 5 GHz,True,True,False,False
+WFA137777,Siyata Mobile Inc.,Siyata SD7 Ultra,SD7 Ultra,2025-10-30,Phones,2.4 GHz; 5 GHz,True,True,False,False
+WFA137151,"Lumi United Technology Co., Ltd",Camera Hub G350,CH-C05E,2025-10-30,"Tablets, Ereaders & Cameras",2.4 GHz; 5 GHz,True,True,True,False
+WFA135834,Premium Audio Company Technology Center K.K.,Wireless Audio System,The Sevens II,2025-10-30,"Gaming, Media & Music",2.4 GHz; 5 GHz,True,True,False,False
+WFA138053,TCL Communication Ltd.,T513G,T513G,2025-10-30,Phones,2.4 GHz; 5 GHz,True,True,False,False
+WFA137938,Orange,WE82242-H2-LT,WE82242-H2-LT,2025-10-29,Routers,2.4 GHz; 5 GHz,True,True,True,True
+WFA137879,WNC Corporation,Wi-Fi 7 Residential Gateway,BGW720-400,2025-10-29,Routers,2.4 GHz; 5 GHz; 6 GHz,True,True,True,True
+WFA137210,Nokia Corporation,Beacon 4,Beacon 4,2025-10-28,Routers,2.4 GHz; 5 GHz,True,True,True,True
+WFA137863,Hewlett Packard Enterprise,AP-76x,76x,2025-10-28,Routers,2.4 GHz; 5 GHz; 6 GHz,True,True,True,True
+WFA120845,"Harman International Industries, Inc.",TATA GEN3,"INFOTAINMENT,CONTROLLER IVI-MID + with updated firmware 13.40.5",2025-10-28,Other,2.4 GHz; 5 GHz,True,True,False,False
+WFA137922,Microchip Technology Inc.,Dual-Core Wi-Fi and Bluetooth LE Microcontroller,PIC32WM-BW1002,2025-10-28,Other,2.4 GHz,True,False,False,False
