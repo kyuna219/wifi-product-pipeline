@@ -49,7 +49,7 @@ jobs:
 
       - name: Run ETL script (weekly update)
         run: |
-          python scripts/fetch_and_load.py
+          python scripts/fetch_and_load.py weekly 
 
   # --------------------------
   # 📦 Monthly Backup Job
@@ -87,7 +87,7 @@ jobs:
 
       - name: Run backup script (monthly backup)
         run: |
-          python scripts/fetch_and_load.py
+          python scripts/fetch_and_load.py monthly
 
       - name: Commit monthly CSV to repo
         run: |
