@@ -207,6 +207,18 @@ def backup_monthly_csv():
     
     df_excel.to_excel(file_path, index=False) 
     print(f"📁 Monthly XLSX exported: {file_path}")
+
+    cur.close()
+    conn.close()
+    print("✅ Monthly backup complete")
+
+def deletePrevious():
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    # 🔹 이번 달(1일 기준으로 이전 달)을 백업 대상으로 계산
+    today = date.today()
+    target_month = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
     
     # 🔹 DB에서 해당 월 데이터 삭제
     delete_sql = """
@@ -219,7 +231,7 @@ def backup_monthly_csv():
 
     cur.close()
     conn.close()
-    print("✅ Monthly backup complete")
+    print("✅ Delete complete")
     
 def main():
     if len(sys.argv) < 2:
