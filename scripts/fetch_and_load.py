@@ -143,16 +143,19 @@ def update_weekly_data():
     conn.close()
     print("Upsert complete, rows:", len(rows))
 
-def backup_monthly_csv():
+def export_monthly_xlsx(target_month: str = None):
     conn = get_db_connection()
     cur = conn.cursor()
 
-    # 🔹 이번 달(1일 기준으로 이전 달)을 백업 대상으로 계산
-    today = date.today()
-    target_month = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
-    print(f"🗓 Backing up data for: {target_month}")
+    if target_month:
+        target_month = target_month
+    else:
+        # 🔹 자동 실행 시 이전 달 (1일 기준으로 이전 달) 계산
+        today = date.today()
+        target_month = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
 
-    # 🔹 백업 대상 데이터 가져오기
+    print(f"🗓 Exporting data for: {target_month}")
+    
     query = """
         SELECT * FROM wifi_products
         WHERE TO_CHAR(date_certified, 'YYYY-MM') = %s
@@ -164,22 +167,24 @@ def backup_monthly_csv():
         print("⚠️ No data found for that month.")
         cur.close()
         conn.close()
-        return
+        return target_month, 0
 
     # 📁 폴더 생성: data/YYYY/
     year = target_month.split("-")[0]
     folder_path = Path(f"data/{year}")
     folder_path.mkdir(parents=True, exist_ok=True)
+    
+    # 💾 XLSX 파일 저장 경로 설정
+    file_path = folder_path / f"{target_month}.xlsx"
 
+    '''
     # 💾 CSV 파일 저장: data/2025/2025-10.csv
     # file_path = folder_path / f"{target_month}.csv"
     # df.to_csv(file_path, index=False)
     # print(f"📁 Monthly backup saved: {file_path}")
+    '''
 
-    # 💾 XLSX 파일 저장 경로 설정
-    file_path = folder_path / f"{target_month}.xlsx"
-
-    # extract necessary columns
+    # Extract necessary columns
     df_excel = df.copy()
     final_columns = [
         'cid',
@@ -193,7 +198,7 @@ def backup_monthly_csv():
     ]
     df_excel = df_excel[final_columns]
 
-    # rename 
+    # Rename 
     df_excel = df_excel.rename(columns={
         'cid': 'CID',
         'brand': 'Brand',
@@ -210,17 +215,18 @@ def backup_monthly_csv():
 
     cur.close()
     conn.close()
-    print("✅ Monthly backup complete")
+    print("✅ Monthly export complete")
 
-def deletePrevious():
+    return target_month, len(df_excel)
+
+def delete_monthly_data(target_month: str):
     conn = get_db_connection()
     cur = conn.cursor()
 
     # 🔹 이번 달(1일 기준으로 이전 달)을 백업 대상으로 계산
-    today = date.today()
-    target_month = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
+    # today = date.today()
+    # target_month = (today.replace(day=1) - timedelta(days=1)).strftime("%Y-%m")
     
-    # 🔹 DB에서 해당 월 데이터 삭제
     delete_sql = """
         DELETE FROM wifi_products
         WHERE TO_CHAR(date_certified, 'YYYY-MM') = %s;
@@ -235,7 +241,7 @@ def deletePrevious():
     
 def main():
     if len(sys.argv) < 2:
-        print("Error: Missing run mode argument. Use 'weekly' or 'monthly'.")
+        print("Error: Missing run mode argument. Use 'weekly', 'monthly_export', or 'monthly_delete'.")
         sys.exit(1)
         
     mode = sys.argv[1]
@@ -243,9 +249,16 @@ def main():
     if mode == 'weekly':
         print("🚀 Starting weekly data update...")
         update_weekly_data()
-    elif mode == 'monthly':
+    elif mode == 'monthly_export':
         print("💾 Starting monthly backup...")
-        backup_monthly_csv()
+        target_month, count = export_monthly_xlsx()
+        print(f"::set-output name=target_month::{target_month}") # YAML 아웃풋 전달
+    elif mode == 'monthly_delete':
+        if len(sys.argv) != 3:
+            print("Error: 'monthly_delete' mode requires exactly one target month argument (YYYY-MM).")
+            sys.exit(1)
+        target_month = sys.argv[2]
+        delete_monthly_data(target_month)
     else:
         print(f"Error: Invalid run mode: {mode}")
         sys.exit(1)
