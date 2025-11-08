@@ -13,7 +13,12 @@ on:
         type: choice
         options:
           - weekly
-          - monthly
+          - monthly_export
+          - manual_delete
+      target_month_to_delete:
+        description: 'Target Month for Manual Data Deletion (YYYY-MM)'
+        required: false
+        type: string
 
 jobs:
   # --------------------------
@@ -54,12 +59,12 @@ jobs:
   # --------------------------
   # 📦 Monthly Backup Job
   # --------------------------
-  monthly-backup:
-    name: Monthly CSV Backup
+  monthly-export:
+    name: Monthly XLSX Export (to Git & Drive)
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'schedule' && github.event.schedule == '0 9 1 * *' ||
-      github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'monthly'
+      github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'monthly_export'
 
     env:
       POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
@@ -87,8 +92,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run backup script (monthly backup)
+        id: run_export
         run: |
-          python scripts/fetch_and_load.py monthly
+          python scripts/fetch_and_load.py monthly_export
 
       - name: Calculate backup path variables for Google Drive
         id: calculate_path
@@ -117,3 +123,46 @@ jobs:
           git add data/**/*.xlsx || true
           git commit -m "Monthly backup $(date -u +%Y-%m-%d)" || echo "No changes to commit"
           git push origin main
+
+---
+
+  # 🗑 Manual DB Deletion Job 
+  manual-delete-data:
+    name: Manual DB Data Deletion
+    runs-on: ubuntu-latest
+    # 수동 실행 모드 'manual_delete'가 선택될 때만 실행
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'manual_delete'
+
+    env:
+      POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+      POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+      POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
+      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_SSLMODE: ${{ secrets.POSTGRES_SSLMODE }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GDRIVE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }}
+      
+    steps:
+      - name: Set up Python and Dependencies
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+
+      - name: Determine Target Month
+        id: determine_month
+        run: |
+          # 사용자 입력에서 삭제 대상 월을 가져옴
+          TARGET_MONTH="${{ github.event.inputs.target_month_to_delete }}"
+          if [ -z "$TARGET_MONTH" ]; then
+            echo "Error: 'Target Month' must be provided in manual delete mode."
+            exit 1
+          fi
+          echo "::set-output name=target_month::$TARGET_MONTH"
+
+      - name: Run DB Deletion Script
+        run: |
+          # monthly_delete 모드와 삭제할 대상 월을 Python에 인자로 전달
+          python scripts/fetch_and_load.py monthly_delete ${{ steps.determine_month.outputs.target_month }}
