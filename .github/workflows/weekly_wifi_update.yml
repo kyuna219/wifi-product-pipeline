@@ -69,6 +69,7 @@ jobs:
       POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
       POSTGRES_SSLMODE: ${{ secrets.POSTGRES_SSLMODE }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GDRIVE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }}
 
     steps:
       - name: Checkout repo
@@ -88,6 +89,26 @@ jobs:
       - name: Run backup script (monthly backup)
         run: |
           python scripts/fetch_and_load.py monthly
+
+      - name: Calculate backup path variables for Google Drive
+        id: calculate_path
+        run: |
+          # 백업 대상 월 (지난달) 계산
+          TARGET_MONTH=$(date -u +%Y-%m --date='last month')
+          YEAR=$(date -u +%Y --date='last month')
+          echo "TARGET_MONTH=$TARGET_MONTH" >> $GITHUB_ENV
+          echo "YEAR=$YEAR" >> $GITHUB_ENV
+          echo "Generated XLSX path: data/$YEAR/$TARGET_MONTH.xlsx"
+
+      - name: Upload XLSX to Google Drive
+        uses: adriangab/gdrive-upload@v1
+        with:
+          credentials: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }} 
+          # 동적으로 생성된 파일 경로 사용
+          source: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx
+          destination-id: '1QQsgNiDBJb4_EfU_ovph7djAVCBM42J2' 
+          # Drive에 저장될 파일 이름
+          filename: '${{ env.YEAR }}WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
 
       - name: Commit monthly XLSX to repo
         run: |
