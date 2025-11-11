@@ -126,14 +126,16 @@ jobs:
           echo "Generated XLSX path: data/$YEAR/$TARGET_MONTH.xlsx"
 
       - name: Upload XLSX to Google Drive
-        uses: mathisve/gdrive-upload-action@v1.0.4
+        uses: mathisve/gdrive-upload-action@main
         with:
           credentials: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }} 
           # 동적으로 생성된 파일 경로 사용
-          source: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx
-          destination-id: '1QQsgNiDBJb4_EfU_ovph7djAVCBM42J2' 
+          filename: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx
+          folderId: '1QQsgNiDBJb4_EfU_ovph7djAVCBM42J2' 
           # Drive에 저장될 파일 이름
           name: '${{ env.YEAR }}/WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
+          encoded: false
+          overwrite: true
 
       - name: Commit monthly XLSX to repo
         run: |
