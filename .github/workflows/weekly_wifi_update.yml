@@ -9,14 +9,15 @@ on:
       mode:
         description: 'Select run mode'
         required: true
-        default: 'weekly'
+        default: 'scheduled_weekly'
         type: choice
         options:
-          - weekly
-          - monthly_export
-          - manual_delete
-      target_month_to_delete:
-        description: 'Target Month for Manual Data Deletion (YYYY-MM)'
+          - scheduled_weekly  # 7일 자동 업데이트
+          - manual_weekly     # 커스텀 날짜 업데이트
+          - monthly_export    # 지난달 데이터 XLSX 파일 내보내기 
+          - manual_delete     # DB 데이터 수동 삭제
+      target_date_or_month:
+        description: 'Target Date (YYYY-MM-DD for weekly) or Month (YYYY-MM for delete). Leave empty for automatic/scheduled runs.'
         required: false
         type: string
 
@@ -29,7 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'schedule' && github.event.schedule == '0 9 * * 1' ||
-      github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'weekly'
+      github.event_name == 'workflow_dispatch' && (
+        github.event.inputs.mode == 'scheduled_weekly' ||
+        github.event.inputs.mode == 'manual_weekly'
+      )
 
     env:
       POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
@@ -54,8 +58,23 @@ jobs:
 
       - name: Run ETL script (weekly update)
         run: |
-          python scripts/fetch_and_load.py weekly 
+          MODE="${{ github.event.inputs.mode }}"
+          TARGET_DATE="${{ github.event.inputs.target_date_or_month }}"
 
+          # 1. manual_weekly (YYYY-MM-DD 필수)
+          if [ "$MODE" == "manual_weekly" ]; then
+            if [ -z "$TARGET_DATE" ]; then
+              echo "Error: 'Target Date (YYYY-MM-DD)' must be provided for 'manual_weekly' mode."
+              exit 1
+            fi
+            echo "Running manual weekly update from $TARGET_DATE"
+            python scripts/fetch_and_load.py weekly "$TARGET_DATE"
+
+          # 2. scheduled_weekly (자동 7일 계산)
+          else
+            echo "Running default 7-day scheduled update."
+            python scripts/fetch_and_load.py weekly
+          fi
   # --------------------------
   # 📦 Monthly Backup Job
   # --------------------------
@@ -114,7 +133,7 @@ jobs:
           source: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx
           destination-id: '1QQsgNiDBJb4_EfU_ovph7djAVCBM42J2' 
           # Drive에 저장될 파일 이름
-          filename: '${{ env.YEAR }}WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
+          filename: '${{ env.YEAR }}/WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
 
       - name: Commit monthly XLSX to repo
         run: |
@@ -124,17 +143,15 @@ jobs:
           git commit -m "Monthly backup $(date -u +%Y-%m-%d)" || echo "No changes to commit"
           git push origin main
 
----
-
-  # 🗑 Manual DB Deletion Job 
+# ----------------------------------------------------
+# 🗑 Manual DB Deletion Job (manual_db_delete)
+# ----------------------------------------------------
   manual-delete-data:
     name: Manual DB Data Deletion
     runs-on: ubuntu-latest
-    # 수동 실행 모드 'manual_delete'가 선택될 때만 실행
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'manual_delete'
 
     env:
-      POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
       POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
       POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
       POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
@@ -151,18 +168,21 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
 
-      - name: Determine Target Month
+      - name: Determine Target Month (YYYY-MM)
         id: determine_month
         run: |
           # 사용자 입력에서 삭제 대상 월을 가져옴
-          TARGET_MONTH="${{ github.event.inputs.target_month_to_delete }}"
-          if [ -z "$TARGET_MONTH" ]; then
+          TARGET_INPUT="${{ github.event.inputs.target_date_or_month }}"
+          if [ -z "$TARGET_INPUT" ]; then
             echo "Error: 'Target Month' must be provided in manual delete mode."
             exit 1
           fi
-          echo "::set-output name=target_month::$TARGET_MONTH"
+          # YYYY-MM 형식으로 자르기. (YYYY-MM-DD를 넣어도 YYYY-MM만 사용, DB 삭제 시 월별 삭제가 목적)
+          TARGET_MONTH=$(echo $TARGET_INPUT | cut -d'-' -f1-2)
+          echo "TARGET_MONTH=$TARGET_MONTH" >> $GITHUB_ENV
+          echo "Data to be deleted for month: $TARGET_MONTH"
 
       - name: Run DB Deletion Script
         run: |
           # monthly_delete 모드와 삭제할 대상 월을 Python에 인자로 전달
-          python scripts/fetch_and_load.py monthly_delete ${{ steps.determine_month.outputs.target_month }}
+          python scripts/fetch_and_load.py monthly_delete ${{ env.TARGET_MONTH }}
