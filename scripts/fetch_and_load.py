@@ -258,7 +258,8 @@ def main():
         target_month, count = export_monthly_xlsx()
         # Save target_month to environment variable file
         with open(os.environ.get("GITHUB_ENV"), "a") as env_file:
-    env_file.write(f"TARGET_MONTH={target_month}\n")    elif mode == 'monthly_delete':
+            env_file.write(f"TARGET_MONTH={target_month}\n")    
+    elif mode == 'monthly_delete':
         if len(sys.argv) != 3:
             print("Error: 'monthly_delete' mode requires exactly one target month argument (YYYY-MM).")
             sys.exit(1)
