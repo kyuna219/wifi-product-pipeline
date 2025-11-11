@@ -69,10 +69,13 @@ def request_wifi(certifications, date_from):
         rows.append(d)
     return pd.DataFrame(rows)
 
-def update_weekly_data():
-    today = date.today()
-    week_ago = today - timedelta(days=7)
-    date_from = str(week_ago)
+def update_weekly_data(start_date: str = None):
+    if start_date:
+        date_from = start_date
+    else:
+        today = date.today()
+        week_ago = today - timedelta(days=7)
+        date_from = str(week_ago)
 
     all_df = pd.DataFrame()
     for c in CERTS:
@@ -247,13 +250,15 @@ def main():
     mode = sys.argv[1]
     
     if mode == 'weekly':
+        start_date = sys.argv[2] if len(sys.argv) > 2 else None
         print("🚀 Starting weekly data update...")
-        update_weekly_data()
+        update_weekly_data(start_date)
     elif mode == 'monthly_export':
         print("💾 Starting monthly backup...")
         target_month, count = export_monthly_xlsx()
-        print(f"::set-output name=target_month::{target_month}") # YAML 아웃풋 전달
-    elif mode == 'monthly_delete':
+        # Save target_month to environment variable file
+        with open(os.environ.get("GITHUB_ENV"), "a") as env_file:
+    env_file.write(f"TARGET_MONTH={target_month}\n")    elif mode == 'monthly_delete':
         if len(sys.argv) != 3:
             print("Error: 'monthly_delete' mode requires exactly one target month argument (YYYY-MM).")
             sys.exit(1)
