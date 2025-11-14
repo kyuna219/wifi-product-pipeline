@@ -10,8 +10,8 @@ import io
 # 1. 데이터 로드 및 캐싱 (st.connection 사용)
 # ------------------------------------
 # @st.cache_data 대신 st.connection().query()를 사용하면 캐싱이 내부적으로 처리됩니다.
-# ttl="10m" (10분)을 설정하여 데이터가 10분마다 자동으로 새로 고쳐지도록 합니다.
-@st.cache_data(ttl="10m", show_spinner="데이터를 불러오는 중입니다...")
+# ttl="7d" (7일)을 설정하여 데이터가 7일마다 자동으로 새로 고쳐지도록 합니다.
+@st.cache_data(ttl="7d", show_spinner="데이터를 불러오는 중입니다...")
 def load_data():
     try:
         # st.connection을 사용하여 PostgreSQL 연결 객체를 생성하고 캐싱합니다.
