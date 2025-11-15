@@ -84,7 +84,6 @@ jobs:
     if: |
       github.event_name == 'schedule' && github.event.schedule == '0 9 1 * *' ||
       github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'monthly_export'
-
     env:
       POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
       POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
@@ -94,7 +93,6 @@ jobs:
       POSTGRES_SSLMODE: ${{ secrets.POSTGRES_SSLMODE }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GDRIVE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }}
-      DRIVE_PARENT_ID: ${{ secrets.DRIVE_PARENT_ID }}
 
     steps:
       - name: Checkout repo
@@ -110,52 +108,30 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
       - name: Run backup script (monthly backup)
         id: run_export
         run: |
           python scripts/fetch_and_load.py monthly_export
-
       - name: Calculate backup path variables for Google Drive
         id: calculate_path
         run: |
+          # 백업 대상 월 (지난달) 계산
           TARGET_MONTH=$(date -u +%Y-%m --date='last month')
           YEAR=$(date -u +%Y --date='last month')
           echo "TARGET_MONTH=$TARGET_MONTH" >> $GITHUB_ENV
           echo "YEAR=$YEAR" >> $GITHUB_ENV
           echo "Generated XLSX path: data/$YEAR/$TARGET_MONTH.xlsx"
-
-      # ===========================================================
-      # 🟦 Google Drive 업로드
-      # ===========================================================
-  
-      # 1) 서비스 계정 JSON 을 파일로 생성
-      - name: Prepare service account json
-        run: |
-          echo "${GDRIVE_SERVICE_ACCOUNT_CREDENTIALS}" > /tmp/sa.json
-  
-      # 2) Drive API Python client 설치
-      - name: Install Google Drive Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib
-
-      # 3) Python 업로드 스크립트 실행
-      #    → 연도 폴더 없으면 생성, 있으면 재사용
-      #    → XLSX MIME type 설정 → Google Drive preview 가능
-      - name: Upload XLSX to Google Drive (supports folder creation)
-        run: |
-          export GDRIVE_SA_JSON_PATH=/tmp/sa.json
-          PARENT_ID="${DRIVE_PARENT_ID}"
-          LOCAL_FILE="data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx"
-          YEAR_FOLDER="${{ env.YEAR }}"
-          DRIVE_FILENAME="WiFi_Products_${{ env.TARGET_MONTH }}.xlsx"
-  
-          python scripts/gdrive_upload.py \
-            "$PARENT_ID" \
-            "$LOCAL_FILE" \
-            "$YEAR_FOLDER" \
-            "$DRIVE_FILENAME"
+      - name: Upload XLSX to Google Drive
+        uses: mathisve/gdrive-upload-action@main
+        with:
+          credentials: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }} 
+          # 동적으로 생성된 파일 경로 사용
+          filename: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx
+          folderId: '1YRwixwoTQYwGn-WYZajEdy34OgpI2mKG' 
+          # Drive에 저장될 파일 이름
+          name: '${{ env.YEAR }}/WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
+          encoded: false
+          overwrite: true
 
       - name: Commit monthly XLSX to repo
         run: |
