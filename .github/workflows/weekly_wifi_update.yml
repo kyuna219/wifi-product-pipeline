@@ -129,7 +129,7 @@ jobs:
           filename: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx
           folderId: '1YRwixwoTQYwGn-WYZajEdy34OgpI2mKG' 
           # Drive에 저장될 파일 이름
-          name: '${{ env.YEAR }}/WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
+          name: 'WiFi_Products_${{ env.TARGET_MONTH }}.xlsx'
           encoded: false
           overwrite: true
 
