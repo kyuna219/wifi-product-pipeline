@@ -160,6 +160,9 @@ jobs:
       GDRIVE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }}
       
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+    
       - name: Set up Python and Dependencies
         uses: actions/setup-python@v4
         with:
