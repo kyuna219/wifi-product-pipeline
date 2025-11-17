@@ -146,7 +146,7 @@ def update_weekly_data(start_date: str = None):
     conn.close()
     print("Upsert complete, rows:", len(rows))
 
-def export_monthly_xlsx(target_month: str = None):
+def export_monthly_xlsx_csv(target_month: str = None):
     conn = get_db_connection()
     cur = conn.cursor()
 
@@ -176,16 +176,14 @@ def export_monthly_xlsx(target_month: str = None):
     year = target_month.split("-")[0]
     folder_path = Path(f"data/{year}")
     folder_path.mkdir(parents=True, exist_ok=True)
+
+    # 💾 CSV 파일 저장: data/2025/2025-10.csv
+    file_path = folder_path / f"{target_month}.csv"
+    df.to_csv(file_path, index=False)
+    print(f"📁 Monthly csv backup saved: {file_path}")
     
     # 💾 XLSX 파일 저장 경로 설정
     file_path = folder_path / f"{target_month}.xlsx"
-
-    '''
-    # 💾 CSV 파일 저장: data/2025/2025-10.csv
-    # file_path = folder_path / f"{target_month}.csv"
-    # df.to_csv(file_path, index=False)
-    # print(f"📁 Monthly backup saved: {file_path}")
-    '''
 
     # Extract necessary columns
     df_excel = df.copy()
@@ -255,7 +253,7 @@ def main():
         update_weekly_data(start_date)
     elif mode == 'monthly_export':
         print("💾 Starting monthly backup...")
-        target_month, count = export_monthly_xlsx()
+        target_month, count = export_monthly_xlsx_csv()
         # Save target_month to environment variable file
         with open(os.environ.get("GITHUB_ENV"), "a") as env_file:
             env_file.write(f"TARGET_MONTH={target_month}\n")    
