@@ -112,15 +112,15 @@ jobs:
         id: run_export
         run: |
           python scripts/fetch_and_load.py monthly_export
-      - name: Calculate backup path variables for Google Drive
-        id: calculate_path
-        run: |
-          # 백업 대상 월 (지난달) 계산
-          TARGET_MONTH=$(date -u +%Y-%m --date='last month')
-          YEAR=$(date -u +%Y --date='last month')
-          echo "TARGET_MONTH=$TARGET_MONTH" >> $GITHUB_ENV
-          echo "YEAR=$YEAR" >> $GITHUB_ENV
-          echo "Generated XLSX path: data/$YEAR/$TARGET_MONTH.xlsx"
+      # - name: Calculate backup path variables for Google Drive
+      #   id: calculate_path
+      #   run: |
+      #     # 백업 대상 월 (지난달) 계산
+      #     TARGET_MONTH=$(date -u +%Y-%m --date='last month')
+      #     YEAR=$(date -u +%Y --date='last month')
+      #     echo "TARGET_MONTH=$TARGET_MONTH" >> $GITHUB_ENV
+      #     echo "YEAR=$YEAR" >> $GITHUB_ENV
+      #     echo "Generated XLSX path: data/$YEAR/$TARGET_MONTH.xlsx"
       - name: Upload XLSX to Google Drive
         uses: mathisve/gdrive-upload-action@main
         with:
@@ -133,11 +133,11 @@ jobs:
           encoded: false
           overwrite: true
 
-      - name: Commit monthly XLSX to repo
+      - name: Commit monthly XLSX and CSV to repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/**/*.xlsx || true
+          git add data/**/*.* || true
           git commit -m "Monthly backup $(date -u +%Y-%m-%d)" || echo "No changes to commit"
           git push origin main
 
