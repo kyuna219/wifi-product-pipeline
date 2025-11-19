@@ -27,15 +27,30 @@ def get_db_connection():
     return conn
 
 CERTS = ["276","235","189","1652"]
+PAGE_LIMIT = 500
 
-def request_wifi(certifications, date_from):
+def request_wifi(all_certification_ids, date_from, date_to, start_index, limit):
     headers = {"User-Agent":"Mozilla/5.0","X-Requested-With":"XMLHttpRequest"}
-    url = f"https://www.wi-fi.org/product-finder-api?sort_by=certified&sort_order=desc&certifications={certifications}&date_from={date_from}"
-    r = requests.post(url, headers=headers, timeout=30)
+    url = (
+        f"https://prf.cert.wi-fi.org/products/view/filtered?"
+        f"sort_by=certified&sort_order=desc&"  
+        f"certifications={all_certification_ids}&"
+        f"date_from={date_from}&"  
+        f"date_to={date_to}&"      
+        f"start={start_index}&"
+        f"items={limit}"
+    )
+    r = requests.get(url, headers=headers, timeout=30)
     r.raise_for_status()
     data = r.json()
+
+    products_list = data.get("items", [])
+    total_count = data.get('total', 0)
+
+    print(f"-> Fetched {len(products_list)} items at start={start_index}. Total expected: {total_count}")
+
     rows = []
-    for p in data.get("products", []):
+    for p in products_list:
         certs = p.get("certifications", [])
 
         wifi_n = any(c.get("name")=="Wi-Fi CERTIFIED™ n" and c.get("should_be_displayed_on_details") for c in certs)
@@ -43,7 +58,6 @@ def request_wifi(certifications, date_from):
         wifi_6 = any(c.get("name")=="Wi-Fi CERTIFIED 6®" and c.get("should_be_displayed_on_details") for c in certs)
         wifi_7 = any(c.get("name")=="Wi-Fi CERTIFIED 7™" and c.get("should_be_displayed_on_details") for c in certs)
         
-        # 지원 기술을 하나의 목록으로 통합 
         supported_list = []
         if wifi_n: supported_list.append("n")
         if wifi_ac: supported_list.append("ac")
@@ -67,29 +81,65 @@ def request_wifi(certifications, date_from):
             "wifi_7": wifi_7,
         }
         rows.append(d)
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows), total_count
 
 def update_weekly_data(start_date: str = None):
+    today = date.today()
+    
     if start_date:
-        date_from = start_date
+        date_from_str = start_date
     else:
-        today = date.today()
         week_ago = today - timedelta(days=7)
-        date_from = str(week_ago)
+        date_from_str = str(week_ago)
+
+    date_to_str = str(today)
 
     all_df = pd.DataFrame()
-    for c in CERTS:
-        try:
-            df = request_wifi(c, date_from)
-            all_df = pd.concat([all_df, df], ignore_index=True)
-        except Exception as e:
-            print("Error fetching cert", c, e)
+    all_cert_ids_str = ",".join(CERTS) # ⭐ 모든 ID를 통합 ⭐
+    start_index = 0
+    # for c in CERTS:
+    #     try:
+    #         df = request_wifi(c, date_from)
+    #         all_df = pd.concat([all_df, df], ignore_index=True)
+    #     except Exception as e:
+    #         print("Error fetching cert", c, e)
 
+    while True:
+        try:
+            # request_wifi_optimized 함수 호출
+            df, total_count = request_wifi_optimized(
+                all_cert_ids_str, date_from_str, date_to_str, start_index, PAGE_LIMIT
+            )
+            
+            if df.empty:
+                print("-> Reached end of data.")
+                break 
+
+            all_df = pd.concat([all_df, df], ignore_index=True)
+            
+            start_index += PAGE_LIMIT
+            
+            if total_count > 0 and start_index >= total_count:
+                print(f"-> Total count ({total_count}) reached.")
+                break
+                
+            if len(df) < PAGE_LIMIT:
+                print(f"-> Fetched less than PAGE_LIMIT ({len(df)} records). Assuming end of data.")
+                break
+
+        except requests.exceptions.HTTPError as e:
+            print(f"Error fetching data at start={start_index}: {e}")
+            break
+        except Exception as e:
+            print(f"Unexpected Error fetching data at start={start_index}: {e}")
+            break
+    
     if all_df.empty:
         print("No new data")
         return
 
     # 중복 제거: cid 기준 최근 날짜 우선
+    all_df['date_certified'] = pd.to_datetime(all_df['date_certified'], errors='coerce')
     all_df.sort_values("date_certified", ascending=False, inplace=True)
     all_df = all_df.drop_duplicates(subset=["cid"], keep="first")
 
