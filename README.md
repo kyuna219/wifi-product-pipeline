@@ -1,6 +1,6 @@
 # 🛰️ Wi-Fi Certified Product Data Pipeline
 
-A fully automated data pipeline that fetches, processes, and stores **Wi-Fi Certified™ product data** from [Wi-Fi Alliance](https://www.wi-fi.org/) using **GitHub Actions**, **PostgreSQL**, and **Tableau** for visualization.
+A fully automated data pipeline that fetches, processes, and stores **Wi-Fi Certified™ product data** from [Wi-Fi Alliance](https://www.wi-fi.org/) using **GitHub Actions**, **PostgreSQL**, and **Streamlit** for visualization.
 
 > **Goal:** Provide up-to-date Wi-Fi certification insights every week through automated data collection and visualization.
 
@@ -12,7 +12,7 @@ This project automates the process of collecting and updating Wi-Fi Certified™
 It replaces traditional on-premise schedulers (like Airflow) with **GitHub Actions**, enabling cloud-based automation even when the local machine is off.
 
 ### 🔁 Data Flow
-Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon/Supabase or local) → Tableau (Dashboard)
+Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon) → Streamlit (Dashboard)
 
 ---
 
@@ -21,9 +21,9 @@ Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon/Supabase or local) �
 - 🕓 **Weekly Scheduled Data Updates** via GitHub Actions  
 - ☁️ **No Local Server Needed** — runs entirely in the cloud  
 - 🧹 **Automated Data Cleaning & Deduplication**  
-- 🗄️ **Storage in PostgreSQL** (local or Neon.tech cloud or Supabase)  
-- 📈 **Interactive Tableau Dashboard** for visualization  
-- 💾 **Historical Data Archiving** (optional: GitHub or Google Drive)
+- 🗄️ **Storage in PostgreSQL** (local or Neon.tech cloud)  
+- 📈 **Interactive Streamlit Dashboard** for visualization  
+- 💾 **Historical Data Archiving** (GitHub and Google Drive)
 
 ---
 
@@ -32,9 +32,9 @@ Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon/Supabase or local) �
 | Component | Technology |
 |------------|-------------|
 | Automation | GitHub Actions |
-| Database | PostgreSQL / Neon.tech / Supabase |
+| Database | PostgreSQL / Neon.tech |
 | Data Processing | Python (requests, pandas, psycopg2) |
-| Visualization | Tableau Public |
+| Visualization | Streamlit |
 | Version Control | Git + GitHub |
 
 ---
@@ -44,13 +44,15 @@ Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon/Supabase or local) �
 wifi_certified_data_pipeline/
 │
 ├── .github/workflows/
-│ └── update_data.yml # GitHub Actions workflow
+│ └── weekly_wifi_update.yml # GitHub Actions workflow
 │
 ├── scripts/
 │ ├── fetch_and_load.py # Fetch and load Wi-Fi data
+│ ├── gdrive_upload.py # Save last month's Excel data to Google Drive
+│ ├── dashboard.py # Build visualization for Streamlit
 │
 ├── data/
-│ └── (optional) archived_data.csv
+│ └── archived_data.csv
 │
 ├── README.md
 └── requirements.txt
@@ -63,8 +65,8 @@ wifi_certified_data_pipeline/
 2. Python scripts request the latest data from Wi-Fi Alliance API.
 3. Data is processed and cleaned with `pandas`.
 4. Duplicates from previous weeks are checked and removed.
-5. Final dataset is stored in **PostgreSQL** (local or Neon cloud or Supabase).
-6. **Tableau** fetches the latest dataset automatically for visualization.
+5. Final dataset is stored in **PostgreSQL** (local or Neon cloud).
+6. **Streamlit** fetches the latest dataset automatically for visualization.
 
 ---
 
@@ -120,13 +122,13 @@ jobs:
         run: python scripts/fetch_wifi_data.py && python scripts/upload_to_postgres.py
 ```
 
-## 📈 Tableau Dashboard
+## 📈 Streamlit Dashboard
 
-A Tableau Public dashboard connects directly to your PostgreSQL (Neon) database or a CSV snapshot.
+A Streamlit Public dashboard connects directly to your PostgreSQL (Neon) database.
 This ensures the dashboard always displays the latest Wi-Fi certification trends.
 
-(Example link — replace with Tableau dashboard)
-👉 View Dashboard on Tableau Public
+[Streamlit Dashboard](https://wifi-certified.streamlit.app/)
+👉 View Dashboard on Streamlit
 
 ## 💾 Historical Archiving
 
@@ -140,11 +142,7 @@ or Google Drive / GitHub Releases
 
 ## 🧠 Future Improvements
 
-Automate monthly archiving to GitHub or S3
-
 Add visualization for certification frequency trends
-
-Integrate Slack/Email notifications for pipeline success/failure
 
 ## 📜 License
 
