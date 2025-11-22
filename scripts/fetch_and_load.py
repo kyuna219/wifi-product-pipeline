@@ -229,11 +229,10 @@ def export_monthly_xlsx_csv(target_month: str = None):
 
     # 💾 CSV 파일 저장: data/2025/2025-10.csv
     file_path = folder_path / f"{target_month}.csv"
-    df.to_csv(file_path, index=False)
-    print(f"📁 Monthly csv backup saved: {file_path}")
-    
     # 💾 XLSX 파일 저장 경로 설정
     file_path = folder_path / f"{target_month}.xlsx"
+    df.to_csv(file_path, index=False)
+    print(f"📁 Monthly csv backup saved: {file_path}")
 
     # Extract necessary columns
     df_excel = df.copy()
@@ -268,7 +267,7 @@ def export_monthly_xlsx_csv(target_month: str = None):
     conn.close()
     print("✅ Monthly export complete")
 
-    return target_month, len(df_excel)
+    return target_month, year, len(df_excel)
 
 def delete_monthly_data(target_month: str):
     conn = get_db_connection()
@@ -303,10 +302,11 @@ def main():
         update_weekly_data(start_date)
     elif mode == 'monthly_export':
         print("💾 Starting monthly backup...")
-        target_month, count = export_monthly_xlsx_csv()
+        target_month, year, count = export_monthly_xlsx_csv()
         # Save target_month to environment variable file
         with open(os.environ.get("GITHUB_ENV"), "a") as env_file:
             env_file.write(f"TARGET_MONTH={target_month}\n")    
+            env_file.write(f"YEAR={year}\n")
     elif mode == 'monthly_delete':
         if len(sys.argv) != 3:
             print("Error: 'monthly_delete' mode requires exactly one target month argument (YYYY-MM).")
