@@ -106,8 +106,8 @@ def update_weekly_data(start_date: str = None):
 
     while True:
         try:
-            # request_wifi_optimized 함수 호출
-            df, total_count = request_wifi_optimized(
+            # request_wifi 함수 호출
+            df, total_count = request_wifi(
                 all_cert_ids_str, date_from_str, date_to_str, start_index, PAGE_LIMIT
             )
             
