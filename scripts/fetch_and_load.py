@@ -29,12 +29,12 @@ def get_db_connection():
 CERTS = ["276","235","189","1652"]
 PAGE_LIMIT = 500
 
-def request_wifi(all_certification_ids, date_from, date_to, start_index, limit):
+def request_wifi(certification_id, date_from, date_to, start_index, limit):
     headers = {"User-Agent":"Mozilla/5.0","X-Requested-With":"XMLHttpRequest"}
     url = (
         f"https://prf.cert.wi-fi.org/products/view/filtered?"
         f"sort_by=certified&sort_order=desc&"  
-        f"certifications={all_certification_ids}&"
+        f"certifications={certification_id}&"
         f"date_from={date_from}&"  
         f"date_to={date_to}&"      
         f"start={start_index}&"
@@ -47,7 +47,7 @@ def request_wifi(all_certification_ids, date_from, date_to, start_index, limit):
     products_list = data.get("items", [])
     total_count = data.get('total', 0)
 
-    print(f"-> Fetched {len(products_list)} items at start={start_index}. Total expected: {total_count}")
+    print(f"-> Fetched {len(products_list)} items for Cert {certification_id} at start={start_index}. Total expected: {total_count}")
 
     rows = []
     for p in products_list:
@@ -95,44 +95,43 @@ def update_weekly_data(start_date: str = None):
     date_to_str = str(today)
 
     all_df = pd.DataFrame()
-    all_cert_ids_str = ",".join(CERTS) # ⭐ 모든 ID를 통합 ⭐
-    start_index = 0
-    # for c in CERTS:
-    #     try:
-    #         df = request_wifi(c, date_from)
-    #         all_df = pd.concat([all_df, df], ignore_index=True)
-    #     except Exception as e:
-    #         print("Error fetching cert", c, e)
-
-    while True:
-        try:
-            # request_wifi 함수 호출
-            df, total_count = request_wifi(
-                all_cert_ids_str, date_from_str, date_to_str, start_index, PAGE_LIMIT
-            )
-            
-            if df.empty:
-                print("-> Reached end of data.")
-                break 
-
-            all_df = pd.concat([all_df, df], ignore_index=True)
-            
-            start_index += PAGE_LIMIT
-            
-            if total_count > 0 and start_index >= total_count:
-                print(f"-> Total count ({total_count}) reached.")
-                break
+    # all_cert_ids_str = ",".join(CERTS) # ⭐ 모든 ID를 통합 ⭐
+    # start_index = 0
+    for c in CERTS:
+        start_index = 0
+        cert_df = pd.DataFrame()
+        
+        print(f"\nProcessing Certification ID: {c}")
+        
+        while True:
+            try:
+                # request_wifi 함수 호출 (단일 ID 'c' 전달)
+                df, total_count = request_wifi(c, date_from_str, date_to_str, start_index, PAGE_LIMIT)
                 
-            if len(df) < PAGE_LIMIT:
-                print(f"-> Fetched less than PAGE_LIMIT ({len(df)} records). Assuming end of data.")
-                break
+                if df.empty:
+                    print(f"  -> Reached end of data for {c}.")
+                    break 
 
-        except requests.exceptions.HTTPError as e:
-            print(f"Error fetching data at start={start_index}: {e}")
-            break
-        except Exception as e:
-            print(f"Unexpected Error fetching data at start={start_index}: {e}")
-            break
+                cert_df = pd.concat([cert_df, df], ignore_index=True)
+                
+                start_index += PAGE_LIMIT
+                
+                if total_count > 0 and start_index >= total_count:
+                    print(f"  -> Total count ({total_count}) reached for {c}.")
+                    break
+                    
+                if len(df) < PAGE_LIMIT:
+                    print(f"  -> Fetched less than PAGE_LIMIT ({len(df)} records). Assuming end of data.")
+                    break
+
+            except requests.exceptions.HTTPError as e:
+                print(f"  -> HTTP Error for {c} at start={start_index}: {e}")
+                break
+            except Exception as e:
+                print(f"  -> Unexpected Error fetching cert {c} at start={start_index}: {e}")
+                break
+        
+        all_df = pd.concat([all_df, cert_df], ignore_index=True)
     
     if all_df.empty:
         print("No new data")
@@ -228,11 +227,11 @@ def export_monthly_xlsx_csv(target_month: str = None):
     folder_path.mkdir(parents=True, exist_ok=True)
 
     # 💾 CSV 파일 저장: data/2025/2025-10.csv
-    file_path = folder_path / f"{target_month}.csv"
+    file_path_csv = folder_path / f"{target_month}.csv"
     # 💾 XLSX 파일 저장 경로 설정
-    file_path = folder_path / f"{target_month}.xlsx"
-    df.to_csv(file_path, index=False)
-    print(f"📁 Monthly csv backup saved: {file_path}")
+    file_path_xlsx = folder_path / f"{target_month}.xlsx"
+    df.to_csv(file_path_csv, index=False)
+    print(f"📁 Monthly csv backup saved: {file_path_csv}")
 
     # Extract necessary columns
     df_excel = df.copy()
@@ -260,8 +259,8 @@ def export_monthly_xlsx_csv(target_month: str = None):
         'wifi_support_list': 'Wi-Fi Support List', 
     })
     
-    df_excel.to_excel(file_path, index=False) 
-    print(f"📁 Monthly XLSX exported: {file_path}")
+    df_excel.to_excel(file_path_xlsx, index=False) 
+    print(f"📁 Monthly XLSX exported: {file_path_xlsx}")
 
     cur.close()
     conn.close()
