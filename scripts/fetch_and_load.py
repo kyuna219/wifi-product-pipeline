@@ -227,9 +227,9 @@ def export_monthly_xlsx_csv(target_month: str = None):
     folder_path.mkdir(parents=True, exist_ok=True)
 
     # 💾 CSV 파일 저장: data/2025/2025-10.csv
-    file_path_csv = folder_path / f"{target_month}.csv"
+    file_path_csv = folder_path / f"WiFi_Products_{target_month}.csv"
     # 💾 XLSX 파일 저장 경로 설정
-    file_path_xlsx = folder_path / f"{target_month}.xlsx"
+    file_path_xlsx = folder_path / f"WiFi_Products_{target_month}.xlsx"
     df.to_csv(file_path_csv, index=False)
     print(f"📁 Monthly csv backup saved: {file_path_csv}")
 
