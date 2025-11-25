@@ -2,7 +2,7 @@
 
 A fully automated data pipeline that fetches, processes, and stores **Wi-Fi Certified™ product data** from [Wi-Fi Alliance](https://www.wi-fi.org/) using **GitHub Actions**, **PostgreSQL**, and **Streamlit** for visualization.
 
-> **Goal:** Provide up-to-date Wi-Fi certification insights every week through automated data collection and visualization.
+> **Goal:** Provide up-to-date Wi-Fi certification insights every month through automated data collection and visualization.
 
 ---
 
@@ -18,7 +18,8 @@ Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon) → Streamlit (Dashb
 
 ## ⚙️ Key Features
 
-- 🕓 **Weekly Scheduled Data Updates** via GitHub Actions  
+- 🕓 **Weekly Scheduled Data Updates** via GitHub Actions
+- 📦 **Manual Monthly Backups** to GitHub Repository and Google Drive
 - ☁️ **No Local Server Needed** — runs entirely in the cloud  
 - 🧹 **Automated Data Cleaning & Deduplication**  
 - 🗄️ **Storage in PostgreSQL** (local or Neon.tech cloud)  
@@ -31,7 +32,7 @@ Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon) → Streamlit (Dashb
 
 | Component | Technology |
 |------------|-------------|
-| Automation | GitHub Actions |
+| Automation | GitHub Actions (Scheduler) |
 | Database | PostgreSQL / Neon.tech |
 | Data Processing | Python (requests, pandas, psycopg2) |
 | Visualization | Streamlit |
@@ -52,7 +53,7 @@ wifi_certified_data_pipeline/
 │ ├── dashboard.py # Build visualization for Streamlit
 │
 ├── data/
-│ └── archived_data.csv
+│ └── YYYY/YYYY-MM.xlsx/csv # Monthly backup files
 │
 ├── README.md
 └── requirements.txt
@@ -61,12 +62,13 @@ wifi_certified_data_pipeline/
 
 ## 🗓️ How It Works
 
-1. **GitHub Actions** triggers every week (e.g., Sunday 00:00 UTC).
-2. Python scripts request the latest data from Wi-Fi Alliance API.
+1. **GitHub Actions** triggers every week (e.g., Sunday 00:00 UTC) for weekly updates and monthly (1st day 09:00 UTC) for backups.
+2. Python script (fetch_and_load.py) requests the latest data from Wi-Fi Alliance API.
 3. Data is processed and cleaned with `pandas`.
 4. Duplicates from previous weeks are checked and removed.
-5. Final dataset is stored in **PostgreSQL** (local or Neon cloud).
-6. **Streamlit** fetches the latest dataset automatically for visualization.
+5. Final dataset is upserted (INSERT/UPDATE) into **PostgreSQL** (Neon cloud).
+6. Monthly: A dedicated job exports the previous month's data from PostgreSQL into a CSV and XLSX file and archives them on GitHub and Google Drive.
+7. **Streamlit** fetches the latest dataset automatically for visualization.
 
 ---
 
@@ -88,12 +90,14 @@ pip install -r requirements.txt
 
 ### 3️⃣ Run manually:
 ```bash
-python scripts/fetch_wifi_data.py
-python scripts/upload_to_postgres.py
+# weekly update (saved to DB)
+python scripts/fetch_and_load.py scheduled_weekly
+
+# monthly backup (export data into CSV/XLSX)
+python scripts/fetch_and_load.py monthly_export
 ```
 
 ## ☁️ Deployment via GitHub Actions
-
 The update_data.yml workflow automates the weekly job.
 ```
 name: Update Wi-Fi Certified Data
@@ -101,10 +105,11 @@ name: Update Wi-Fi Certified Data
 on:
   schedule:
     - cron: '0 0 * * 0'   # Every Sunday at 00:00 UTC
+    - cron: '0 9 1 * *'    # Every 1st day of the month at 09:00 UTC (Monthly Backup)
   workflow_dispatch:
 
 jobs:
-  update:
+  update:  # Weekly update job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -118,8 +123,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run Data Update
-        run: python scripts/fetch_wifi_data.py && python scripts/upload_to_postgres.py
+      - name: Run Weekly Data Update
+        run: python scripts/fetch_and_load.py scheduled_weekly
 ```
 
 ## 📈 Streamlit Dashboard
@@ -127,22 +132,23 @@ jobs:
 A Streamlit Public dashboard connects directly to your PostgreSQL (Neon) database.
 This ensures the dashboard always displays the latest Wi-Fi certification trends.
 
-[Streamlit Dashboard](https://wifi-certified.streamlit.app/)
-👉 View Dashboard on Streamlit
+[Streamlit Dashboard](https://wifi-certified.streamlit.app/) 👉 View Dashboard on Streamlit
 
 ## 💾 Historical Archiving
 
+Archived data is structured by year and month.
 Older data (past months) can be exported and stored in:
 
 ```
-data/ folder within this repo
+data/YYYY/YYYY-MM.xlsx/csv within this repo
 
-or Google Drive / GitHub Releases
+or Google Drive 
 ```
 
 ## 🧠 Future Improvements
 
-Add visualization for certification frequency trends
+- Add visualization for certification frequency trends
+- Add a monthly data deletion step to the pipeline to keep the database small.
 
 ## 📜 License
 
