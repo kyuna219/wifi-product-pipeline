@@ -157,3 +157,5 @@ This project is licensed under the MIT License — feel free to use and adapt it
 ## 👩‍💻 Author
 
 Yuna Kim
+- Email: kyuna219@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/yuna-kim-/](https://www.linkedin.com/in/yuna-kim-/)
