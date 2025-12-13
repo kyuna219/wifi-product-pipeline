@@ -125,7 +125,7 @@ jobs:
         uses: mathisve/gdrive-upload-action@main
         with:
           credentials: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_CREDENTIALS }} 
-          filename: data/${{ env.YEAR }}/${{ env.TARGET_MONTH }}.xlsx # 동적으로 생성된 파일 경로 사용
+          filename: data/${{ env.YEAR }}/WiFi_Products_${{ env.TARGET_MONTH }}.xlsx # 동적으로 생성된 파일 경로 사용
           folderId: '1YRwixwoTQYwGn-WYZajEdy34OgpI2mKG' 
           # name: 'WiFi_Products_${{ env.TARGET_MONTH }}.xlsx' # Drive에 저장될 파일 이름
           name: WiFi_Products_${{ env.TARGET_MONTH }}.xlsx
