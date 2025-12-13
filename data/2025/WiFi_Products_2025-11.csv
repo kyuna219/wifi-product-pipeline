@@ -1,0 +1,121 @@
+cid,brand,product,model_number,date_certified,category,frequency_band,wifi_support_list,wifi_n,wifi_ac,wifi_6,wifi_7
+WFA130164,HP Inc.,HP Envy 6500e,714N5A,2025-11-28,Computers & Accessories,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA131036,HP Inc.,HP OfficeJet Pro 9730 Series,537P5C,2025-11-28,Computers & Accessories,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA131028,HP Inc.,HP OfficeJet Pro 9130b Series,4U557C,2025-11-28,Computers & Accessories,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA136702,Orange,QBox,Qbox,2025-11-28,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA131035,HP Inc.,HP OfficeJet Pro 8130 series,68K80B,2025-11-28,Computers & Accessories,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137807,TCL Communication Ltd.,T453D,T453D,2025-11-27,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138373,LG Electronics,HMAM5W,HMAM5W,2025-11-27,"Gaming, Media & Music",2.4 GHz,n,True,False,False,False
+WFA138191,LG Electronics,LANR61,LANR61,2025-11-27,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137607,"ECARX (Hubei) Tech Co.,Ltd.",ECU-Display Head Unit,EEBBCDE1,2025-11-27,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138374,LG Electronics,HMAM6W,HMAM6W,2025-11-27,"Gaming, Media & Music",2.4 GHz,n,True,False,False,False
+WFA138192,LG Electronics,LANR62,LANR62,2025-11-27,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138345,Sercomm Corporation,WIFI7 Router,OWR7,2025-11-26,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138309,Dexatek Technology Ltd.,Key Light Air,20LAM9901,2025-11-26,Other,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA138353,Renesas Electronics,RRQ61051-208,RRQ61051-208,2025-11-26,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138358,Robert Bosch Car Multimedia Suzhou,infortainment cockpit,VCUCP2,2025-11-26,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137502,"Nubia Technology Co., Ltd.",5G Digital Mobile Phone,NX741J,2025-11-26,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137764,ZTE Corporation,Router,MC8532B,2025-11-25,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138337,Renesas Electronics,RRQ61051-408,RRQ61051-408,2025-11-24,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138310,Renesas Electronics,RRQ61051-008,RRQ61051-008,2025-11-24,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138336,Renesas Electronics,RRQ61001-010,RRQ61001-010,2025-11-24,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA136345,Sercomm Corporation,Spectrum,SBE1V1R,2025-11-24,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138311,Renesas Electronics,RRQ61051-009,RRQ61051-009,2025-11-24,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138339,Renesas Electronics,RRQ61051-010,RRQ61051-010,2025-11-24,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137796,"Nextivity, Inc.",Nextivity SHIELD MegaFi 2,M4D-VC,2025-11-24,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA136891,Mercury Corporation,GW-ME721D,GW-ME721D,2025-11-24,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA136044,"TCL Yuxin Zhixing Technology (Hui zhou) Co., Ltd.",RAP4E,RAP4E,2025-11-21,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA134126,Sagemcom Broadband SAS,DIW252 Generic,DIW252,2025-11-20,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138305,Zebra Technologies,WS301,WS301,2025-11-20,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA135669,Sagemcom Broadband SAS,DxIW253 VF Gen4,DxIW253,2025-11-20,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA134913,Zebra Technologies,WS501,WS501,2025-11-20,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA78448,"Konica Minolta, Inc.",Wireless LAN Kit,UK-221,2025-11-20,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137523,OPPO,Tablet (Wi-Fi and other),OPD2503,2025-11-19,"Tablets, Ereaders & Cameras",2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137069,ZTE Corporation,Home Gateway,ZXHN F6201D,2025-11-19,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137463,Senwa Global International SA de CV,Mobile Phone,AQ6,2025-11-19,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138291,"KAON Group Co., Ltd.",KPP/NCTC,KSTB2500,2025-11-19,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138153,OPPO,Mobile Phone,CPH2811,2025-11-19,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA138115,OPPO,Mobile Phone,CPH2819,2025-11-19,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138259,OPPO,Mobile Phone,CPH2847,2025-11-19,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138273,Dongfeng Motor Group Company Limited,IVI-6125,DONGFENG MAGE,2025-11-18,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137262,Sercomm Corporation,WIFI7 Router,OWR7,2025-11-18,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137811,Legrand,Indoor Camera Advance,NPC01,2025-11-18,Smart Home,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137869,"Triductor Technology (Suzhou), Inc.",TR5330S,TR5330S,2025-11-18,Other,2.4 GHz,"n, 6",True,False,True,False
+WFA138193,Renesas Electronics,RRQ61001-009,RRQ61001-009,2025-11-18,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138261,ZTE Corporation,5G Multi-Mode Digital Mobile Phone,Blade A9 Pro 5G,2025-11-17,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA133013,CVTE,Wireless module “M2B”,M2B,2025-11-17,Other,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA138264,Desay SV Automotive,Carmax ALJ LCR2 9inch DA,25XUGL0609L,2025-11-17,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137609,LG Electronics,webOS TV,MT7669,2025-11-17,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138238,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine5776I-X7EH,2025-11-14,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137560,Renesas Electronics,RRQ61001-008,RRQ61001-008,2025-11-14,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137524,TCL Communication Ltd.,FG7300,FG7300,2025-11-14,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137498,ZTE Corporation,LTE Digital Mobile Phone,P505,2025-11-14,Phones,2.4 GHz,n,True,False,False,False
+WFA138236,"Grandstream Networks, Inc.",Wi-Fi 6 Extender and Access Point,GWN7660EM,2025-11-14,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138254,ZTE Corporation,LTE Digital Mobile Phone,Blade A3 Plus,2025-11-14,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA121553,NXP Semiconductors,Aw690,AW690,2025-11-14,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA136933,Vantiva,Home Ultra,PS5625IMCB,2025-11-14,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138243,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,eKitEngine AP673H,2025-11-14,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138240,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine8776-X5F-T,2025-11-14,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138239,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine6776-X7TH,2025-11-14,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138237,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine8776I-X6ETHP-T,2025-11-14,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138228,"Kaonbroadband CO., LTD.",GPON Gateway,PG6693G,2025-11-13,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138197,Hyundai Mobis,Venue,ccNC Basic SP3i,2025-11-13,Routers,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138201,Robert Bosch Car Multimedia Suzhou,CSC,7901011,2025-11-13,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137891,Altice Labs SA,Fiber Gateway XGS-PON Tri-band Wi-Fi 7,XSR140LNR,2025-11-13,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA125658,Nordic Semiconductor ASA,nRF7002 DK,nRF7002-DK,2025-11-13,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137439,Honeywell Safety and Productivity Solutions,CT70,CT70-X1,2025-11-13,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA132296,Silicon Laboratories Inc.,Singleband 802.11ax Advanced WiFi Combo Module,SiWN917Y,2025-11-13,Other,2.4 GHz,"n, 6",True,False,True,False
+WFA129080,Silicon Laboratories Inc.,Singleband 802.11ax Advanced Wi-Fi Combo Solution,SiWG917,2025-11-13,Other,2.4 GHz,"n, 6",True,False,True,False
+WFA132014,Silicon Laboratories Inc.,Singleband 802.11ax Advanced WiFi Combo Solution,SiWN917,2025-11-13,Other,2.4 GHz,"n, 6",True,False,True,False
+WFA137157,NTT Corporation,XG-200SE,XG-200SE,2025-11-13,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138229,"Kaonbroadband CO., LTD.",GPON Gateway,PG6693C,2025-11-13,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138181,D & M Holdings Inc.,AV SURROUND RECEIVER,AVR-S980H,2025-11-12,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138183,D & M Holdings Inc.,AV SURROUND RECEIVER,AVR-X2900H,2025-11-12,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA136472,"Faurecia Clarion Electronics Co., Ltd.",C211,Q000,2025-11-12,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138184,D & M Holdings Inc.,AV SURROUND RECEIVER,AVR-X2900H DAB,2025-11-12,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138186,D & M Holdings Inc.,AV SURROUND AMPLIFIER,AVC-X3900H,2025-11-12,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138173,Neusoft Corporation,HEAD UNIT ASSY,YAGM2408MA,2025-11-12,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138174,Neusoft Corporation,HEAD UNIT ASSY,YAGM2408MB,2025-11-12,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138175,Neusoft Corporation,HEAD UNIT ASSY,YAGM2408ME,2025-11-12,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138176,Neusoft Corporation,HEAD UNIT ASSY,YAGM2408MF,2025-11-12,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138136,ZTE Corporation,Home Gateway,ZXHN F6601H,2025-11-12,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138185,D & M Holdings Inc.,AV SURROUND RECEIVER,AVR-X3900H,2025-11-12,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137959,"Harman International Industries, Inc.",TATA Gen3 plus,COCKPIT CONTROLLER IVI IC,2025-11-11,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA134022,Visteon Corporation,JLR CCCM,VPTANF-20B337,2025-11-11,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138169,"T3 Technology Co.,Ltd.",GPON Terminal,T723,2025-11-11,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137927,"Xiaomi Communications Co., Ltd.",POCO X8 Pro,2511FPC34G,2025-11-11,Phones,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138162,"Shanghai Shenqijiyuan Intelligent Terminal Co., Ltd.",5G Multi-Mode Digital Mobile Phone,Z2570N,2025-11-11,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA138163,"Shanghai Shenqijiyuan Intelligent Terminal Co., Ltd.",5G Multi-Mode Digital Mobile Phone,NX552J,2025-11-11,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA124373,"Garmin International, Inc.",IDC23 High 8155,IDC23 High 8155,2025-11-11,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137810,"Nubia Technology Co., Ltd.",Mobile Phone,P0110,2025-11-11,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138142,Robert Bosch Car Multimedia Suzhou,infortainment cockpit,VCUCX2,2025-11-10,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138159,Motorola Solutions,APX NEXT XE,APX NEXT XE,2025-11-10,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137825,MobiWire SAS,MobiConnect 5G,CM52,2025-11-10,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA133537,Robert Bosch Car Multimedia Suzhou,GEEA 2.0,EEBABCDE6,2025-11-10,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138161,Motorola Solutions,APX NEXTi,APX NEXTi,2025-11-10,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138160,Motorola Solutions,APX NEXT XN,APX NEXT XN,2025-11-10,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138158,TCL Communication Ltd.,T440G,T440G,2025-11-10,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138092,Soundlab Technology Company Limited,Streaming Preamp,MA.1,2025-11-07,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138125,Askey Computer Corporation,5G Gateway,NCM1120D2-D323-WL,2025-11-07,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA138131,Realtek Semiconductor Corporation,RTL8721DC,RTL8721DC,2025-11-07,Other,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA138135,ZTE Corporation,Home Gateway,ZXHN H3601P-Z,2025-11-07,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137926,"Shenzhen?Chelide?Technology?Co.,?Ltd.",Car multimedia,CVD9100-MD,2025-11-06,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138129,Pioneer Corporation,DISPLAY AUDIO,AVH-2569ZY,2025-11-06,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138130,"Huawei Technologies Co., Ltd.",Optical Network Terminal,OptiXstar EG8145X7-10,2025-11-06,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138091,Soundlab Technology Company Limited,Streaming Preamp,MS.1,2025-11-06,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137162,BYD Auto Industry Company Limited,In-vehicle Multimedia Host,MTDC07,2025-11-06,Other,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137146,"AUMOVIO Systems, Inc.",PACCAR Connect Platform,Q21-1180-001-XXX,2025-11-06,Other,5 GHz,"n, ac, 6",True,True,True,False
+WFA138109,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLEGM0AJ,2025-11-05,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138063,Premium Audio Company Technology Center K.K.,Wireless Audio System,The Nines II,2025-11-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138112,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLEGM3AJ,2025-11-05,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138113,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE4AJA,2025-11-05,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138062,Premium Audio Company Technology Center K.K.,Wireless Audio System,The Fives II,2025-11-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138110,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLEGM1AJ,2025-11-05,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138111,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLEGM2AJ,2025-11-05,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138075,NTT Corporation,XG-200KI,XG-200KI,2025-11-04,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137525,Skyworth Group,BE3600 Dual-Band Mesh Router,RG31,2025-11-04,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA136191,"Changsha ZTop Microelectronics Co., Ltd.",ZTOP WIFI6 ComBo Chipset,ZT9612,2025-11-03,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA137194,The Chamberlain Group LLC,MyQ Chime,MYQW11AXXW,2025-11-03,Smart Home,2.4 GHz,n,True,False,False,False
+WFA138076,"Nokia Shanghai Bell Co., Ltd.",Nokia WiFi,Beacon 3.3,2025-11-03,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA133837,H3C,H3C WA7320i WLAN AP with H3C WX Series WLAN Controller,H3C WA7320i WLAN AP,2025-11-03,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA131473,"Lexmark International, Inc.",CX951se,7566-288,2025-11-03,Computers & Accessories,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
