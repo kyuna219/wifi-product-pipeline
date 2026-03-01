@@ -1,0 +1,125 @@
+cid,brand,product,model_number,date_certified,category,frequency_band,wifi_support_list,wifi_n,wifi_ac,wifi_6,wifi_7
+WFA139691,GEWISS S.p.A,Home Gateway,GWC2X856,2026-02-20,Smart Home,2.4 GHz,n,True,False,False,False
+WFA132962,HP PPS India Operations Ltd,Wireless HP Jetdirect 3200w accessory with HP Color LaserJet 5700,9R1U0A,2026-02-18,Computers & Accessories,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA111638,Honeywell Safety and Productivity Solutions,Mobile Computer,CT45-L0N,2026-02-16,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA124455,Honeywell Safety and Productivity Solutions,Mobile Computer,CT47X1N,2026-02-16,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA131199,"Harman International Industries, Inc.",TKCMOD11000W,V333,2026-02-13,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA135351,"Harman International Industries, Inc.",TKCMOD12J00W,V158,2026-02-13,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139678,Sharp Corporation,SHARP LCD TV,4T-C75HJ6000IG,2026-02-13,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA111150,"Harman International Industries, Inc.",TKCMOD12E00,V037,2026-02-13,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139365,Vimar Spa,Gateway IoT Bluetooth Wi-Fi,IoT connected gateway 2M,2026-02-13,Smart Home,2.4 GHz,n,True,False,False,False
+WFA135350,"Harman International Industries, Inc.",TKCMOD12N00W,V160,2026-02-13,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139669,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLBDE0AJA,2026-02-12,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139448,"Synaptics, Inc.",SYN4384,4384,2026-02-12,Other,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139670,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLBDE2AJA,2026-02-12,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139339,"Panasonic Entertainment & Communication Co., Ltd",LCDTV,26-2ktv,2026-02-12,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139115,"Shenzhen Bluetrum Technology Co.,Ltd.",WIFI&BT Internet of Things Module,AB-M6003G-I,2026-02-12,Other,2.4 GHz,n,True,False,False,False
+WFA139636,Nokia Corporation,Nokia ONT,XS-0427G-A,2026-02-11,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA135993,ZTE Corporation,Router,U20S Pro,2026-02-10,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139604,BYD Auto Industry Company Limited,Central Computing Platform,MTED01,2026-02-10,Other,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139661,"Huawei Technologies Co., Ltd.",Optical Network Terminal,OptiXstar K562e-20,2026-02-10,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139571,B&W Group Ltd.,Wireless Speaker,Bowers & Wilkins CASA Studio,2026-02-10,"Gaming, Media & Music",2.4 GHz; 6 GHz,"n, 6",True,False,True,False
+WFA139566,B&W Group Ltd.,Wireless Soundbar,Bowers & Wilkins CASA Cinema,2026-02-10,"Gaming, Media & Music",2.4 GHz; 6 GHz,"n, 6",True,False,True,False
+WFA139565,B&W Group Ltd.,Wireless Subwoofer,Bowers & Wilkins CASA Sub,2026-02-10,"Gaming, Media & Music",2.4 GHz; 6 GHz,"n, 6",True,False,True,False
+WFA138969,COOSEA  GROUP  (HK)  COMPANY  LIMITED,Feature Phone,SN331CC,2026-02-10,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139642,Vodafone Group PLC,EasyBox 7,ZXHN H1700M,2026-02-09,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA125649,"TSC Auto ID Technology Co., Ltd.",Barcode Printer,DH220W,2026-02-09,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA130772,NXP Semiconductors,RW612,RW612,2026-02-06,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138378,Nokia Corporation,Nokia WiFi Beacon 19.1,Beacon 19.1,2026-02-06,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139151,"Wuxi Autolink Intelligence Tech Co., Ltd",vehicle-mounted wireless terminal,T12A8155C,2026-02-06,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139627,Volkswagen China Technical Company,Xpilot Central Computer Platform,MM V02,2026-02-06,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA137938,Orange,WE82242-H2-LT,WE82242-H2-LT,2026-02-06,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139126,NXP Semiconductors,W693,W693,2026-02-05,Other,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA139583,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCEBAJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139584,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCE8AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139580,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCE0AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139600,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2EE6AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139558,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFE2AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA130817,"Harman International Industries, Inc.",TKCMOD12E00W,V157,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139592,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL1DE1AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139594,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDDE8AJC,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139593,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDDEAAJC,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA133149,Yamaha Corporation,Router NWR100,NWR100,2026-02-04,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139591,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL1DE2AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139590,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL1DE3AJC,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139589,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLBDE7AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139596,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDDE9AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139595,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDDE7AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139601,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2EE7AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139597,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDDEBAJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139599,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2EE5AJC,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139587,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL1CE2AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139609,"Harman International Industries, Inc.",Wireless Speaker,PARTYBOX ULTIMATE 2,2026-02-04,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139615,Vantiva,DGM434BUWH,DGM434BUWH,2026-02-04,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139614,Vantiva,OWA834BUWH,OWA834BUWH,2026-02-04,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139588,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLBDE5AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139585,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCE9AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139586,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL1CE0AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139572,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SS1DE6AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139573,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SS1DE7AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139574,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2CE0AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139575,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2CE1AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139576,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2CE3AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139577,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SL2CE4AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139578,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCE4AJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139579,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCE5AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139581,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCE1AJA,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139582,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLDCEAAJB,2026-02-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139570,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFSAAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139560,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFM1AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139567,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFEAAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139564,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFF2AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139563,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFF1AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139562,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFF0AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139559,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFE3AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139557,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFE4AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139556,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFE1AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139555,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFE0AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139568,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFEBAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139554,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFECAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139552,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFEAAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139551,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFE4AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139550,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFE3AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139548,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFE2AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139547,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFE1AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139553,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFEBAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139569,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSQFECAJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139546,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SSPFE0AJA,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA135867,"Elo Touch Solutions, Inc.",Handheld Terminal,EMC-HRPR1.3,2026-02-03,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA114468,Seiko Solutions Inc.,LTE Router,MB-A130-00,2026-02-03,Routers,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139522,Zebra Technologies,TC701L,TC701L,2026-02-02,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA133505,Hewlett Packard Enterprise,AP-735,AP-735,2026-02-02,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139537,ZTE Corporation,UFi,U30 Pro,2026-02-02,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139536,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SS1EE1AEA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139535,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SS1EE0AEA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139534,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFF0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139533,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFS1AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139506,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLFER1AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139521,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFE0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139523,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFE1AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139524,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFE2AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139525,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFE4AJB,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139526,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFE3AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139527,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFE8AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139532,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFS0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139510,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE1AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139507,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139495,ZTE Corporation,EasyBox 7,ZXHN H1700M,2026-02-02,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139505,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLFER0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139504,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLFEE3AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139472,Seiko Epson Corporation,MultiMediaProjector[EB-870Ei],EB-870Ei,2026-02-02,Computers & Accessories,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA139512,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE9AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139511,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE8AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139520,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE7AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139513,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DEBAJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139514,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DECAJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139515,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE4AJB,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139516,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE2AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139517,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE3AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139518,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DEAAJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139519,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST8DE6AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139529,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFM1AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139528,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFM0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139499,Hewlett Packard Enterprise,AP47,AP47,2026-02-02,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139530,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFA0AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139531,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-SLGFA1AJA,2026-02-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
