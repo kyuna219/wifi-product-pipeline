@@ -1,0 +1,166 @@
+cid,brand,product,model_number,date_certified,category,frequency_band,wifi_support_list,wifi_n,wifi_ac,wifi_6,wifi_7
+WFA138156,Shenzhen Tinno Mobile Technology Corp,Smart Phone,U205AA,2026-03-27,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138936,Allied Telesis Holdings K.K.,AT-TQ7413-R,AT-TQ7413-R,2026-03-27,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA124406,Aptiv Technologies Limited,Service and Entertainment Module 2.5,Service and Entertainment Module 2.5,2026-03-27,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA136478,Texas Instruments,CC355xE,CC355xE,2026-03-26,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138093,Texas Instruments,CC350xE,CC350xE,2026-03-26,Other,2.4 GHz,"n, 6",True,False,True,False
+WFA115172,"Honda Motor Co., Ltd.",Car Navigation System-HM ICB,AH00ICB,2026-03-26,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139465,"Vivo Mobile Communication Co., Ltd.",Mobile Phone,V2562,2026-03-25,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA129233,Texas Instruments,MPU RTOS,CC335X,2026-03-25,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139316,WNC Corporation,CGW453-400,CGW453-400,2026-03-25,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA138566,Zyxel Communications Corporation,AX3000 WiFi 6 GPON VoIP Gateway ONT with 1-port USB 2.0,PX3321-T3,2026-03-24,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138317,Landis + Gyr,Revelo,E370,2026-03-24,Other,2.4 GHz,n,True,False,False,False
+WFA97102,HP Inc.,HP LaserJet MFP M234dw,HP LaserJet MFP M234dw,2026-03-24,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA138268,"Beijing Roborock Technology Co., Ltd.",Robotic Vacuum Cleaner,RRE0CPS,2026-03-24,Smart Home,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA135154,"ALPS ALPINE CO., LTD",UXC 1.0,UXC 1.0,2026-03-23,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139377,"Espressif Systems (Shanghai) Co., Ltd.",2.4G&5G Wi-Fi 6 module,ESP32-C5-MINI-1,2026-03-23,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA140036,"Shanghai Shenqijiyuan Intelligent Terminal Co., Ltd.",LTE/WCDMA/GSM(GPRS) Multi-Mode Digital Mobile Phone,Z2582,2026-03-23,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139987,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,eKitEngine AP361H,2026-03-20,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139616,Ingenico Terminals,Smart POS Terminal,AXIUM DX8,2026-03-20,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA140035,TCL Communication Ltd.,T624H,T624H,2026-03-20,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139988,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,eKitEngine AP362H,2026-03-20,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA140014,"Home Depot Product Authority, LLC",4ft SMART Grand Duchess Twinkling Balsam Fir Potted LED Pre-Lit Tree,26LE31029,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA140016,"Home Depot Product Authority, LLC",12 ft SMART Grand Duchess Twinkling Balsam Fir LED Pre-Lit Tree,26LE31016,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA140012,"Home Depot Product Authority, LLC",Wi-Fi Smart Lock,9GED94900-002,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA140011,"Home Depot Product Authority, LLC",Wi-Fi Smart Lock,9GED94900-001,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA140010,"Home Depot Product Authority, LLC",Wi-Fi Smart Lock,994900-002,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA140009,"Home Depot Product Authority, LLC",Wi-Fi Smart Lock,994900-001,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA140013,"Home Depot Product Authority, LLC",Penrose LÁMPARA EN BARRA PARA BAÑO (Penrose 24 IN MATTE BLACK VANITY HUBSPACE WITH NIGHT LIGHT),C06021202A,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA111853,Honeywell Safety and Productivity Solutions,Mobile Computer,CT45-L1N-A​,2026-03-18,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA123986,Vantiva,DGA4135,DGA4135,2026-03-18,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA140028,TCL Communication Ltd.,T624Z,T624Z,2026-03-18,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA140026,"FulScience Automotive Electronics Co., Ltd",Cockpit domain controller,7901011-QF41,2026-03-18,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139781,Desay SV Automotive,Carmax TW LCR2 7inch DA,SDSV-2300,2026-03-18,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA140018,"Kaonbroadband CO., LTD.",GPON Gateway,PG1893G,2026-03-18,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA123077,Honeywell Safety and Productivity Solutions,Mobile Computer,CT47X0N,2026-03-18,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA126676,MaxLinear Inc.,Maxlinear Wi-Fi 7 Triband Access Point,ZURX851-HDK-2,2026-03-18,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA140015,"Home Depot Product Authority, LLC",7.5 ft SMART Grand Duchess Twinkling Balsam Fir Slim Flocked LED Pre-Lit Tree,26LE31019,2026-03-18,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139598,Seiko Solutions Inc.,LTE Router,MB-A130-00,2026-03-17,Routers,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139152,"BICV Technology Co., Ltd.",AV MASTER ASSY,T08,2026-03-17,Other,5 GHz,"n, ac",True,True,False,False
+WFA139999,"Home Depot Product Authority, LLC",9 ft SMART Grand Duchess Twinkling Balsam Fir Slim LED Pre-Lit Tree,26LE31017,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139991,"Home Depot Product Authority, LLC",12ft SMART Grand Duchess Twinkling Balsam Fir LED Pre-Lit Garland,26LE31028,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139998,"Home Depot Product Authority, LLC",7.5 ft Grand Duchess Twinkling Balsam Fir Flocked LED Pre-Lit Tree,26LE31020,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139997,"Home Depot Product Authority, LLC",9 ft Grand Duchess Twinkling Balsam Fir Flocked LED Pre-Lit Tree,26LE31021,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139996,"Home Depot Product Authority, LLC",15 ft Grand Duchess Twinkling Balsam Fir LED Pre-Lit Tree,26LE31018,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139995,"Home Depot Product Authority, LLC",400 SMART Grand Duchess Twinkling Lights,26LE21011,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139994,"Home Depot Product Authority, LLC",3FT SMART GRAND DUCHESS TWINKLING BALSAM FIR LED PRE-LIT TREES - SET OF 2,26LE31001,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139993,"Home Depot Product Authority, LLC",9ft SMART Grand Duchess Twinkling Balsam Fir LED Pre-Lit Garland,26LE31027,2026-03-16,Smart Home,2.4 GHz,n,True,False,False,False
+WFA139799,"FURUNO SYSTEMS Co., Ltd.",SW730-BK,WN-730S,2026-03-16,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139951,"Elo Touch Solutions, Inc.",Handheld Terminal,EMC-M21C,2026-03-16,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139948,"FulScience Automotive Electronics Co., Ltd",Cockpit domain controller,7901011-QW01,2026-03-16,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138247,"Snap One, LLC",Araknis Networks® 530-series Wi-Fi 7 BE9400 Indoor Access Point,AN-530-AP-I,2026-03-16,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139981,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine5776-26-T,2026-03-16,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139980,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine3573-21E-M,2026-03-16,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139979,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine3573-21-M,2026-03-16,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139978,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,AirEngine3573-21-T,2026-03-16,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139975,"Huawei Device Co., Ltd.",Tablet,MLR-W09,2026-03-16,"Tablets, Ereaders & Cameras",2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139974,"Huawei Device Co., Ltd.",Tablet,GEM-W09,2026-03-16,"Tablets, Ereaders & Cameras",2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139454,"Shanghai Shenqijiyuan Intelligent Terminal Co., Ltd.",LTE/WCDMA/GSM(GPRS) Multi-Mode Digital Mobile Phone,Z2581,2026-03-16,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139139,Doppio Mobile,Doppio Capuchino,Doppio S4128,2026-03-16,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139958,TCL Communication Ltd.,8189K,8189K,2026-03-13,"Tablets, Ereaders & Cameras",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139946,Askey Computer Corporation,Router Movistar WiFi 7 Askey RTF8317VW-D2-SX,"RTF8317VW-D2-SX, Router Movistar WiFi 7 Askey RTF8317VW-D2-SX",2026-03-12,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139945,Askey Computer Corporation,Router Movistar WiFi 7 Askey RTF8317VW-D2,"RTF8317VW-D2, Router Movistar WiFi 7 Askey RTF8317VW-D2",2026-03-12,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137898,Top Victory Investments Ltd.,Smart TV,43PQS9001,2026-03-12,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139944,Askey Computer Corporation,Router Movistar WiFi 7 Askey RTF8317VW-D1-SX,"RTF8317VW-D1-SX, Router Movistar WiFi 7 Askey RTF8317VW-D1-SX",2026-03-12,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139943,Askey Computer Corporation,Router Movistar WiFi 7 Askey RTF8317VW-D1,"RTF8317VW-D1, Router Movistar WiFi 7 Askey RTF8317VW-D1",2026-03-12,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA119640,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C50DK1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA119643,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C70DK1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA124051,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,2T-C42FG1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA119641,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C60DK1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA119493,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C60DL1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA123970,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C42DK1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA120710,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C65DK1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA119642,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C70DL1X,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139032,ZTE Corporation,"Vodafone TV 4,Vodafone TV 4 Mini,VTV4 Mini,RichMedia Box",ZXV10 B866V6N4,2026-03-11,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA126580,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C65FV1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA125946,"Brother Industries, Ltd.",Brother Document Scanner ADS-1800W,ADS-1800W,2026-03-10,Computers & Accessories,2.4 GHz,n,True,False,False,False
+WFA126588,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C50FK1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA126586,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C55FK1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA126582,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C75FK1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA126587,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C50FL1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA126585,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C55FL1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA126584,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C65FL1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA120706,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,4T-C65DL1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139812,Extreme Networks,AP5060U Universal Wireless Wi-Fi 7 Outdoor Access Point,AP5060U-WW,2026-03-10,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA126583,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C65FK1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA126581,Sharp Electronics (Malaysia) Sdn. Bhd.,LCD TV,4T-C75FV1X,2026-03-10,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139908,Zebra Technologies,TC101W,TC101W,2026-03-09,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA127943,Zebra Technologies,MC9450,MC9450,2026-03-09,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA139907,Zebra Technologies,TC101L,TC101L,2026-03-09,Phones,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6",True,True,True,False
+WFA139901,Zebra Technologies,TC101W,TC101W,2026-03-09,Phones,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139902,Zebra Technologies,ZT411 Industrial Printer,ZT411,2026-03-09,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139903,Zebra Technologies,ZT421 Industrial Printer,ZT421,2026-03-09,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139904,Zebra Technologies,ZT610 Industrial Printer,ZT610,2026-03-09,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139905,Zebra Technologies,ZT620 Industrial Printer,ZT620,2026-03-09,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA133355,Orange,Livebox S,PRV33AX346B-H2-OG,2026-03-09,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139896,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST3DA0AJD,2026-03-09,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139897,"Panasonic Automotive Systems Co., Ltd.",Car Audio System,CN-ST3DA2AJD,2026-03-09,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA120714,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,2T-C42EG1X,2026-03-09,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA120713,Sharp Electronics (Malaysia) Sdn. Bhd.,AQUOS LCD TV,2T-C50EG1X,2026-03-09,Televisions & Set Top Boxes,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139889,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,2T-C40JF2,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139890,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,2T-C32JF2,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139891,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,1T-C24JF2,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139892,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,1T-C32JF2,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139893,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,2T-C43JF2,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139894,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,1T-C32JF3,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139895,Sharp Consumer Electronics Poland sp. z o.o.,Sharp TV,2T-C40JF3,2026-03-09,Televisions & Set Top Boxes,2.4 GHz,n,True,False,False,False
+WFA139822,Zebra Technologies,ZD611 Desktop Printer,ZD611,2026-03-06,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139823,Zebra Technologies,ZD621 Desktop Printer,ZD621,2026-03-06,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139821,Zebra Technologies,ZD421 Desktop Printer,ZD421,2026-03-06,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139820,Zebra Technologies,ZD411 Desktop Printer,ZD411,2026-03-06,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA111854,Honeywell Safety and Productivity Solutions,Mobile Computer,CT45P-L1N-2,2026-03-06,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139818,D & M Holdings Inc.,AV SURROUND RECEIVER,CINEMA 70s SERIES 2,2026-03-06,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139817,D & M Holdings Inc.,AV SURROUND RECEIVER,CINEMA 60 DAB SERIES 2,2026-03-06,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139816,D & M Holdings Inc.,AV SURROUND RECEIVER,CINEMA 60 SERIES 2,2026-03-06,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139815,D & M Holdings Inc.,AV SURROUND RECEIVER,CINEMA 50 SERIES 2,2026-03-06,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139796,"Harman International Industries, Inc.",Audio Video Amplifier,SDR-40,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139810,Zebra Technologies,ZQ630 Plus Mobile Label Printer,ZQ630 Plus,2026-03-05,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139788,"Harman International Industries, Inc.",Audio Video Processor,AVP45,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA129146,Zebra Technologies,MC9450,MC9450,2026-03-05,Routers,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139786,"Harman International Industries, Inc.",Audio Video Amplifier,AVA35,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139784,"Harman International Industries, Inc.",Audio Video Amplifier,AVA15,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139785,"Harman International Industries, Inc.",Audio Video Amplifier,AVA25,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139809,Zebra Technologies,ZQ620 Plus Mobile Label Printer,ZQ620 Plus,2026-03-05,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139797,"Harman International Industries, Inc.",Audio Video Processor,SDP-60,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139798,"Harman International Industries, Inc.",Audio Video Processor,SDP-70,2026-03-05,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139811,"Huawei Technologies Co., Ltd.",Optical Network Terminal,OptiXstar HG8045B7N-52,2026-03-05,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139772,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT8GA3TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138603,"Shanghai Pudong Yanfeng Automotive Components Co., Ltd.",MODULE ASM-ZXD END,ZB0A1100K,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139763,Extreme Networks,AP5060D Universal Wireless Wi-Fi 7 Outdoor Access Point,AP5060D-WW,2026-03-04,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139773,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT8GA4TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139765,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT7GA0TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139767,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT7GA3TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139766,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT7GA1TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139770,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT8GA0TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139768,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT7GA4TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139769,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT7GA5TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139771,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT8GA1TT,2026-03-04,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139635,"Sichuan Jiuzhou Electronic Technology Co., Ltd",Cockpit Domain Controller,ICHU200CA,2026-03-03,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139702,"Harman International Industries, Inc.",Wireless Speaker,COVE P1,2026-03-03,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139470,Betamek Electronics ( M ) Sdn. Bhd.,D01D,CA1000,2026-03-03,Other,5 GHz,"n, ac",True,True,False,False
+WFA139708,"Harman International Industries, Inc.",Home Wi-Fi speaker,COVE M1,2026-03-03,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA138834,Zebra Technologies,ZQ610 Plus Mobile Label Printer,ZQ610 Plus,2026-03-03,Computers & Accessories,2.4 GHz; 5 GHz,n,True,False,False,False
+WFA139709,"Harman International Industries, Inc.",Home Wi-Fi speaker,COVE X1,2026-03-03,"Gaming, Media & Music",2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139760,PATEO CONNECT Technology (Shanghai) Corporation,Cockpit Domain Controller,ICHU200BA,2026-03-03,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA123179,Honeywell Safety and Productivity Solutions,Mobile Computer,CW45-X0N,2026-03-02,Phones,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139754,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,eKitEngine AP271H,2026-03-02,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139755,"Huawei Technologies Co., Ltd.",Wireless LAN Access Point,eKitEngine AP271H-P,2026-03-02,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA132082,Honeywell Safety and Productivity Solutions,CT30,CT30PX0N,2026-03-02,Phones,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA139756,"Huawei Technologies Co., Ltd.",Optical Network Terminal,OptiXstar HX8145B7Ns-10,2026-03-02,Routers,2.4 GHz; 5 GHz,"n, ac, 6, 7",True,True,True,True
+WFA137806,"FURUNO SYSTEMS Co., Ltd.",SW730-WH,WN-730S,2026-03-02,Routers,2.4 GHz; 5 GHz; 6 GHz,"n, ac, 6, 7",True,True,True,True
+WFA139650,Signify,Smart LED lamp,9290037819B,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA131860,NXP Semiconductors,IW610,IW610,2026-03-02,Other,2.4 GHz; 5 GHz,"n, ac, 6",True,True,True,False
+WFA132081,Honeywell Safety and Productivity Solutions,CT30,CT30PL1N,2026-03-02,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA139659,Signify,Smart LED lamp,9290023834F,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139658,Signify,Smart LED lamp,9290023832E,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139656,Signify,Smart LED lamp,9290037821B,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139655,Signify,Smart LED lamp,9290036047C,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139653,Signify,Smart LED lamp,9290023831E,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139652,Signify,Smart LED lamp,9290037820B,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139651,Signify,Smart LED lamp,9290037819BX,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139649,Signify,Smart LED lamp,9290036020C,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139648,Signify,Smart LED lamp,9290036010CX,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139647,Signify,Smart LED lamp,9290036010C,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA139657,Signify,Smart LED lamp,9290023833F,2026-03-02,Other,2.4 GHz,n,True,False,False,False
+WFA132080,Honeywell Safety and Productivity Solutions,CT30,CT30PL0N,2026-03-02,Phones,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
+WFA138070,"Panasonic Automotive Systems Asia Pacific Co., Ltd.",Display Audio,CV-RT7GA2TT,2026-03-02,Other,2.4 GHz; 5 GHz,"n, ac",True,True,False,False
