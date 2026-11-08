@@ -1,161 +1,232 @@
-# 🛰️ Wi-Fi Certified Product Data Pipeline
+# Wi-Fi Certified Product Data Pipeline
 
-A fully automated data pipeline that fetches, processes, and stores **Wi-Fi Certified™ product data** from [Wi-Fi Alliance](https://www.wi-fi.org/) using **GitHub Actions**, **PostgreSQL**, and **Streamlit** for visualization.
+An automated data pipeline that collects Wi-Fi Certified™ product information from the [Wi-Fi Alliance](https://www.wi-fi.org/), transforms the records, stores them in PostgreSQL, and makes the data explorable through a Streamlit dashboard.
 
-> **Goal:** Provide up-to-date Wi-Fi certification insights every month through automated data collection and visualization.
+## Architecture
 
----
+```text
+Wi-Fi Alliance product data endpoint
+              |
+              v
+      GitHub Actions
+       (scheduled jobs)
+              | 
+              v
+    Python ETL (Requests
+       + Pandas)
+              |
+              v
+ PostgreSQL database (Neon)
+              |
+              v
+   Streamlit + Plotly dashboard
+```
 
-## 📊 Overview
+GitHub Actions orchestrates scheduled ingestion and monthly backup workflows.
 
-This project automates the process of collecting and updating Wi-Fi Certified™ product information weekly.  
-It replaces traditional on-premise schedulers (like Airflow) with **GitHub Actions**, enabling cloud-based automation even when the local machine is off.
+## Key Features
 
-### 🔁 Data Flow
-Wi-Fi Alliance API → GitHub Actions → PostgreSQL (Neon) → Streamlit (Dashboard)
+- Retrieves product certification records from the Wi-Fi Alliance product endpoint.
+- Uses pagination to retrieve larger result sets.
+- Extracts product ID, brand, product name, model number, certification date, category, frequency band, and supported Wi-Fi standards.
+- Sorts by certification date and deduplicates by certification ID (`cid`).
+- Uses PostgreSQL `ON CONFLICT (cid) DO UPDATE` to insert new products and refresh existing records.
+- Runs weekly ETL updates through GitHub Actions.
+- Exports the previous month's records to CSV and XLSX.
+- Commits monthly exports to GitHub and uploads the XLSX backup to Google Drive through the configured workflow.
+- Provides a Streamlit dashboard with Plotly charts, brand filtering, and XLSX download.
 
----
-
-## ⚙️ Key Features
-
-- 🕓 **Weekly Scheduled Data Updates** via GitHub Actions
-- 📦 **Manual Monthly Backups** to GitHub Repository and Google Drive
-- ☁️ **No Local Server Needed** — runs entirely in the cloud  
-- 🧹 **Automated Data Cleaning & Deduplication**  
-- 🗄️ **Storage in PostgreSQL** (local or Neon.tech cloud)  
-- 📈 **Interactive Streamlit Dashboard** for visualization  
-- 💾 **Historical Data Archiving** (GitHub and Google Drive)
-
----
-
-## 🧩 Tech Stack
+## Tech Stack
 
 | Component | Technology |
-|------------|-------------|
-| Automation | GitHub Actions (Scheduler) |
-| Database | PostgreSQL / Neon.tech |
-| Data Processing | Python (requests, pandas, psycopg2) |
-| Visualization | Streamlit |
-| Version Control | Git + GitHub |
+|---|---|
+| Data source | Wi-Fi Alliance product data endpoint |
+| Ingestion | Python, Requests |
+| Transformation | Pandas |
+| Database | PostgreSQL, Neon |
+| Database driver | psycopg2 |
+| Orchestration | GitHub Actions |
+| Dashboard | Streamlit, Plotly |
+| Export | CSV, XLSX, openpyxl |
+| Archive | Google Drive |
 
----
+## Data Model
 
-## 🚀 Project Structure
+The ETL creates a `wifi_products` table with `cid` as the primary key.
+
+| Field | Description |
+|---|---|
+| `cid` | Product certification ID; primary key |
+| `brand` | Company or brand name |
+| `product` | Product name |
+| `model_number` | Product model number |
+| `date_certified` | Certification date |
+| `category` | Product category |
+| `frequency_band` | Supported frequency band |
+| `wifi_support_list` | Comma-separated supported Wi-Fi standards |
+| `wifi_n`, `wifi_ac`, `wifi_6`, `wifi_7` | Boolean support flags |
+
+The current extraction logic checks certification IDs `276`, `235`, `189`, and `1652`, and identifies Wi-Fi n, ac, 6, and 7 support from returned certification metadata.
+
+## Automation
+
+Workflow definition: `.github/workflows/weekly_wifi_update.yml`.
+
+| Workflow | Schedule | Purpose |
+|---|---|---|
+| Weekly update | Monday at 09:00 UTC | Fetch preceding seven days and upsert records |
+| Monthly export | 1st day of each month at 09:00 UTC | Export previous month's records and archive the backup |
+| Manual weekly update | On demand | Update from a supplied start date |
+| Manual deletion | On demand | Delete records for a specified month |
+
+The workflow uses Python 3.11 and repository Actions secrets for database and Google Drive credentials.
+
+Manual workflow modes available through **Actions → Run workflow**:
+
+- `scheduled_weekly`: default seven-day update.
+- `manual_weekly`: update from a supplied `YYYY-MM-DD` start date.
+- `monthly_export`: export the previous month's data.
+- `manual_delete`: delete data for a supplied month.
+
+## Dashboard
+
+The Streamlit app connects to PostgreSQL using Streamlit's SQL connection interface.
+
+Features:
+
+- Bar chart of product counts by supported Wi-Fi standard.
+- Sidebar filter for the top 10 brands.
+- Interactive product table.
+- XLSX download of the full dataset.
+- Cached query results with a seven-day time-to-live.
+
+[Open the live Streamlit dashboard](https://wifi-certified.streamlit.app/).
+
+## Local Setup
+
+### 1. Clone
+
+```bash
+git clone https://github.com/kyuna219/wifi-product-pipeline.git
+cd wifi-product-pipeline
 ```
-wifi_certified_data_pipeline/
-│
-├── .github/workflows/
-│ └── weekly_wifi_update.yml # GitHub Actions workflow
-│
-├── scripts/
-│ ├── fetch_and_load.py # Fetch and load Wi-Fi data
-│ ├── gdrive_upload.py # Save last month's Excel data to Google Drive
-│ ├── dashboard.py # Build visualization for Streamlit
-│
-├── data/
-│ └── YYYY/YYYY-MM.xlsx/csv # Monthly backup files
-│
-├── README.md
-└── requirements.txt
-```
----
 
-## 🗓️ How It Works
+### 2. Create and activate a virtual environment
 
-1. **GitHub Actions** triggers every week (e.g., Sunday 00:00 UTC) for weekly updates and monthly (1st day 09:00 UTC) for backups.
-2. Python script (fetch_and_load.py) requests the latest data from Wi-Fi Alliance API.
-3. Data is processed and cleaned with `pandas`.
-4. Duplicates from previous weeks are checked and removed.
-5. Final dataset is upserted (INSERT/UPDATE) into **PostgreSQL** (Neon cloud).
-6. Monthly: A dedicated job exports the previous month's data from PostgreSQL into a CSV and XLSX file and archives them on GitHub and Google Drive.
-7. **Streamlit** fetches the latest dataset automatically for visualization.
-
----
-
-## 🔄 Setup (for local testing)
-
-### 1️⃣ Create a `.env` file:
-```
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+```bash
+python -m venv .venv
+source .venv/bin/activate
 ```
 
-### 2️⃣ Install dependencies:
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run manually:
-```bash
-# weekly update (saved to DB)
-python scripts/fetch_and_load.py scheduled_weekly
+### 4. Configure PostgreSQL environment variables
 
-# monthly backup (export data into CSV/XLSX)
+Set these variables in your local environment. Do not commit credentials or a populated `.env` file.
+
+```text
+POSTGRES_HOST=your-host
+POSTGRES_PORT=5432
+POSTGRES_DB=your-database
+POSTGRES_USER=your-username
+POSTGRES_PASSWORD=your-password
+POSTGRES_SSLMODE=require
+```
+
+### 5. Run the ETL
+
+Update the last seven days:
+
+```bash
+python scripts/fetch_and_load.py weekly
+```
+
+Update from a specific start date:
+
+```bash
+python scripts/fetch_and_load.py weekly 2025-01-01
+```
+
+Export the previous month's records:
+
+```bash
 python scripts/fetch_and_load.py monthly_export
 ```
 
-## ☁️ Deployment via GitHub Actions
-The update_data.yml workflow automates the weekly job.
-```
-name: Update Wi-Fi Certified Data
+Delete records for a specific month (use with care):
 
-on:
-  schedule:
-    - cron: '0 0 * * 0'   # Every Sunday at 00:00 UTC
-    - cron: '0 9 1 * *'    # Every 1st day of the month at 09:00 UTC (Monthly Backup)
-  workflow_dispatch:
-
-jobs:
-  update:  # Weekly update job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run Weekly Data Update
-        run: python scripts/fetch_and_load.py scheduled_weekly
+```bash
+python scripts/fetch_and_load.py monthly_delete 2025-01
 ```
 
-## 📈 Streamlit Dashboard
+### 6. Run the dashboard
 
-A Streamlit Public dashboard connects directly to your PostgreSQL (Neon) database.
-This ensures the dashboard always displays the latest Wi-Fi certification trends.
+Configure the PostgreSQL connection in Streamlit secrets, then run:
 
-[Streamlit Dashboard](https://wifi-certified.streamlit.app/) 👉 View Dashboard on Streamlit
-
-## 💾 Historical Archiving
-
-Archived data is structured by year and month.
-Older data (past months) can be exported and stored in:
-
-```
-data/YYYY/YYYY-MM.xlsx/csv within this repo
-
-or Google Drive 
+```bash
+streamlit run scripts/dashboard.py
 ```
 
-## 🧠 Future Improvements
+## GitHub Actions Configuration
 
-- Add visualization for certification frequency trends
-- Add a monthly data deletion step to the pipeline to keep the database small.
+Configure these repository secrets before enabling automated workflows:
 
-## 📜 License
+- `POSTGRES_HOST`
+- `POSTGRES_PORT`
+- `POSTGRES_DB`
+- `POSTGRES_USER`
+- `POSTGRES_PASSWORD`
+- `POSTGRES_SSLMODE`
+- `GDRIVE_SERVICE_ACCOUNT_CREDENTIALS`
 
-This project is licensed under the MIT License — feel free to use and adapt it.
+The Streamlit app also requires PostgreSQL connection values in its app secrets.
 
-## 👩‍💻 Author
+Never put database passwords, service-account JSON, or other credentials in source code or commit them to Git.
 
-Yuna Kim
-- Email: kyuna219@gmail.com
-- LinkedIn: [https://www.linkedin.com/in/yuna-kim-/](https://www.linkedin.com/in/yuna-kim-/)
+## Repository Structure
+
+```text
+wifi-product-pipeline/
+├── .github/
+│   └── workflows/
+│       └── weekly_wifi_update.yml
+├── scripts/
+│   ├── fetch_and_load.py
+│   ├── dashboard.py
+│   └── gdrive_upload.py
+├── data/
+│   └── YYYY/
+│       ├── WiFi_Products_YYYY-MM.csv
+│       └── WiFi_Products_YYYY-MM.xlsx
+├── requirements.txt
+└── README.md
+```
+
+## Future Improvements
+
+- Add automated data-quality checks and structured logging.
+- Add retry and alerting behavior for failed ingestion runs.
+- Expand dashboard trends by certification date, category, and frequency band.
+- Add tests for API parsing, deduplication, and database upsert behavior.
+- Review historical retention and backup policies as the dataset grows.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
+
+## Author
+
+**Yuna Kim**
+
+- [GitHub](https://github.com/kyuna219)
+- [LinkedIn](https://www.linkedin.com/in/yuna-kim-/)
